@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
   root: {}
 }));
 
-const Sommeil = ({ className, ...rest }) => {
+const Sport = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -106,7 +106,7 @@ const Sommeil = ({ className, ...rest }) => {
             Last 7 days
           </Button>
         }
-        title="Temps de sommeil"
+        title="Temps de Sport"
       />
       <Divider />
       <CardContent>
@@ -129,8 +129,8 @@ const Sommeil = ({ className, ...rest }) => {
   );
 };
 
-Sommeil.propTypes = {
+Sport.propTypes = {
   className: PropTypes.string
 };
 
-export default Sommeil;
+export default Sport;
