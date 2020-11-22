@@ -43,7 +43,7 @@ const Dashboard = () => {
             <ProgressionScolaire />
           </Grid>
 
-          <Grid item lg={7} sm={6} md={5} xs={12}>
+          <Grid item lg={7} sm={6} md={7} xs={12}>
             <Sport />
           </Grid>
 
