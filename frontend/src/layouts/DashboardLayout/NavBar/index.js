@@ -18,9 +18,9 @@ import {
 import NavItem from './NavItem';
 
 const user = {
-  avatar: '/static/images/avatars/avatar_6.png',
-  jobTitle: 'Senior Developer',
-  name: 'Katarina Smith'
+  avatar: '/static/images/avatars/avatar_1.png',
+  Age: '22 ans',
+  name: 'Elena Da Silva'
 };
 
 const items = [
@@ -47,8 +47,9 @@ const useStyles = makeStyles(() => ({
   },
   avatar: {
     cursor: 'pointer',
-    width: 64,
-    height: 64
+    width: 150,
+    height: 150,
+    marginBottom: 10
   }
 }));
 
@@ -84,7 +85,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
         <Typography
           className={classes.name}
           color="textPrimary"
-          variant="h5"
+          variant="h4"
         >
           {user.name}
         </Typography>
@@ -92,7 +93,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           color="textSecondary"
           variant="body2"
         >
-          {user.jobTitle}
+          {user.Age}
         </Typography>
       </Box>
       <Divider />
