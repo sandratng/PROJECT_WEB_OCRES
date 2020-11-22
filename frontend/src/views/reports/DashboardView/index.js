@@ -35,19 +35,19 @@ const Dashboard = () => {
             <Meteo />
           </Grid>
 
-          <Grid item lg={4} sm={6} md={4} xs={12}>
+          <Grid item lg={4} md={4} sm={6} xs={12}>
             <ToDoList />
           </Grid>
 
-          <Grid item lg={5} sm={6} md={5} xs={12}>
+          <Grid item lg={5} md={5} sm={6} xs={12}>
             <ProgressionScolaire />
           </Grid>
 
-          <Grid item lg={7} sm={6} md={7} xs={12}>
+          <Grid item lg={7} md={7} sm={6} xs={12}>
             <Sport />
           </Grid>
 
-          <Grid item lg={3} sm={3} xl={3} xs={12}>
+          <Grid item lg={3} md={3} sm={3} xs={12}>
             <TotalCustomers />
           </Grid>
 
