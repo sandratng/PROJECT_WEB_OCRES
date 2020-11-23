@@ -23,7 +23,7 @@ const Dashboard = () => {
   const classes = useStyles();
 
   return (
-    <Page className={classes.root} title="Dashboard">
+    <Page className={classes.root} title="ECE Dashboard">
       <Container maxWidth={false}>
         <Grid container spacing={3}>
 
