@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Box,
   Container,
-  makeStyles
+  makeStyles,
 } from '@material-ui/core';
 import Page from 'src/components/Page';
-import Results from './Results';
-import Toolbar from './Toolbar';
-import data from './data';
+import AdminSommeil from './AdminSommeil';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,17 +18,16 @@ const useStyles = makeStyles((theme) => ({
 
 const AdminView = () => {
   const classes = useStyles();
-  const [customers] = useState(data);
 
   return (
     <Page
       className={classes.root}
-      title="Customers"
+      title="ECE Dashboard - Admin"
     >
       <Container maxWidth={false}>
-        <Toolbar />
+        <AdminSommeil />
         <Box mt={3}>
-          <Results customers={customers} />
+        
         </Box>
       </Container>
     </Page>
