@@ -1,14 +1,16 @@
 import React from 'react';
-import { Container, Grid, makeStyles } from '@material-ui/core';
+import { Container, Grid, Divider, makeStyles } from '@material-ui/core';
 import Page from 'src/components/Page';
 import Sommeil from './Sommeil';
 import Meteo from './Meteo';
 import ToDoList from './ToDoList';
+
 import ProgressionScolaire from './ProgressionScolaire';
 import Sport from './Sport';
 import LatestOrders from './LatestOrders';
 import LatestProducts from './LatestProducts';
-import TotalCustomers from './TotalCustomers';
+import CompteBancaire from './CompteBancaire';
+import CarteBancaire from './CarteBancaire';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -44,12 +46,18 @@ const Dashboard = () => {
           </Grid>
 
           <Grid item lg={7} sm={6} md={7} xs={12}>
+            <CompteBancaire />
+            <Divider/>
+            <CarteBancaire />
+            
+           
+          </Grid>
+
+          <Grid item lg={7} sm={6} md={7} xs={12}>
             <Sport />
           </Grid>
 
-          <Grid item lg={3} sm={3} xl={3} xs={12}>
-            <TotalCustomers />
-          </Grid>
+ 
 
           <Grid item lg={4} md={6} xl={3} xs={12}>
             <LatestProducts />

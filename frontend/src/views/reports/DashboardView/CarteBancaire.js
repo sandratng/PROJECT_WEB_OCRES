@@ -2,6 +2,7 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import logoSGpng from './logoSGpng.png';
 import {
     Avatar,
     Box,
@@ -22,20 +23,20 @@ const useStyles = makeStyles(() => ({
     root: {}
   }));
 
-  const CompteBancaire = ({ className, ...rest }) => {
+  const CarteBancaire = ({ className, ...rest }) => {
     const classes = useStyles();
     const theme = useTheme();
   
     const data = [
-        {titre :"Dernier Débit",
-        somme :'-10,99€'
+        {nom:"Da silva",
+        prenom:"Helena",
+        numéro :'9999 8888 7777 6666'
     },
-    {titre :"Dernier Crédit",
-        somme :'+52€'
-    },
-    {titre :"Solde",
-        somme :'531,37€'
+    {nom:"Anjou",
+    prenom:"Paul",
+    numéro :'9999 8888 7777 6666'
     }
+ 
 
     ];
     const options = {
@@ -65,7 +66,7 @@ const useStyles = makeStyles(() => ({
           {...rest}
           display="flex"
         >
-            <CardHeader title='Solde Bancaire'/>
+            <CardHeader title='Carte de crédit'/>
             <Divider />
           <CardContent  display="flex" >
             <Grid container 
@@ -78,21 +79,14 @@ const useStyles = makeStyles(() => ({
 
             >
               <Grid item display="flex" >
-              <Typography
-                  color="Red"
-                  gutterBottom
-                  variant="h4"
-                  style={ {color: "red" }}
-                >
-                  -10,99
-                </Typography>
+              <img src={logoSGpng} alt="Logo" />;
                 <Typography
                   color="Red"
                   gutterBottom
-                  variant="h6"
-                  style={ {color: "Black" }}
+                  variant="h4"
+                  
                 >
-                  Dernier débit
+                 
                 </Typography>
              
               </Grid>
@@ -100,37 +94,34 @@ const useStyles = makeStyles(() => ({
               <Typography
                  gutterBottom
                 variant="h4"
-                color="red"
-                style={ {color: "green" }}
+                
                 >
-                  +52,00€
-                </Typography>
-              <Typography
+                  9999 8888 7777 6666
+                </Typography><Typography
                  gutterBottom
-                variant="h6"
-                color="red"
-                style={ {color: "Black" }}
+                variant="h5"
+                
+                
                 >
-                  Dernier crédit
+                  CCV : 123
+                </Typography>
+                <Typography
+                 gutterBottom
+                variant="h5"
+                
+                
+                >
+                  
+                  02/23
                 </Typography>
               </Grid>
               <Grid item display="flex">
-
               <Typography
                   gutterBottom
-                  variant="h4"
+                  variant="h5"
                 color="red"
-                style={ {color: "blue" }}
                 >
-                  +531,37€
-                </Typography>
-              <Typography
-                  gutterBottom
-                  variant="h6"
-                color="red"
-                style={ {color: "Black" }}
-                >
-                  Solde
+                 Da Silva Helena 
                 </Typography>
               </Grid>
             </Grid>
@@ -148,8 +139,8 @@ const useStyles = makeStyles(() => ({
     };
  
 
-CompteBancaire.propTypes = {
+CarteBancaire.propTypes = {
     className: PropTypes.string
   };
 
-  export default CompteBancaire;
+  export default CarteBancaire;

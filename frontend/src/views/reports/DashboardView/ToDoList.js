@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
+import { createRef, useState } from "react";
 import {
   Box,
   Card,
@@ -10,18 +11,37 @@ import {
   Divider,
   Typography,
   makeStyles,
+  IconButton,
+  InputAdornment,
+  Checkbox,
+  List,
+  ListItem,
+  TextField,
+  ListItemIcon,
+  ListItemText,
+  ListItemSecondaryAction,
   useTheme
 } from '@material-ui/core';
+import { useSnackbar } from "notistack";
+import { useEffect} from "react";
 
+import NewItem from "./NewItem";
+
+
+
+
+const ref = createRef();
 const useStyles = makeStyles(() => ({
   root: {
     height: '100%'
   }
 }));
 
+
 const ToDoList = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
+  
 
   const data = {
     datasets: []
@@ -54,24 +74,30 @@ const ToDoList = ({ className, ...rest }) => {
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
       <CardHeader title="To Do List" />
+      
+        
       <Divider />
       <CardContent>
-        <Box height={200} position="relative">
-          <Doughnut data={data} options={options} />
-        </Box>
-        <Box display="flex" justifyContent="center" mt={2}>
-          {devices.map(({ color, icon: Icon, title, value }) => (
-            <Box key={title} p={1} textAlign="center">
-              <Icon color="action" />
-              <Typography color="textPrimary" variant="body1">
-                {title}
-              </Typography>
-              <Typography style={{ color }} variant="h2">
-                {value}%
-              </Typography>
-            </Box>
-          ))}
-        </Box>
+        <NewItem/>
+      
+        <ListItem >
+          <ListItemIcon>
+            <Checkbox/>
+              </ListItemIcon>
+                <TextField/>
+        </ListItem>
+        <ListItem >
+          <ListItemIcon>
+            <Checkbox/>
+              </ListItemIcon>
+                <TextField/>
+        </ListItem>
+        <ListItem >
+          <ListItemIcon>
+            <Checkbox/>
+              </ListItemIcon>
+                <TextField/>
+        </ListItem>
       </CardContent>
     </Card>
   );
@@ -82,3 +108,6 @@ ToDoList.propTypes = {
 };
 
 export default ToDoList;
+
+
+
