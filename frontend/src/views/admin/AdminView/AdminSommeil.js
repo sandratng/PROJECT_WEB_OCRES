@@ -42,7 +42,7 @@ const AdminSommeil = ({ className, ...rest }) => {
                       id="date"
                       label="Date"
                       type="date"
-                      defaultValue="2020-05-24"
+                      defaultValue="2020-11-30"
                       className={classes.textField}
                     />
                   </form>
