@@ -6,10 +6,7 @@ import Meteo from './Meteo';
 import ToDoList from './ToDoList';
 import ProgressionScolaire from './ProgressionScolaire';
 import Sport from './Sport';
-import LatestOrders from './LatestOrders';
-import LatestProducts from './LatestProducts';
 import CompteBancaire from './CompteBancaire';
-import CarteBancaire from './CarteBancaire';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,42 +39,12 @@ const Dashboard = () => {
           <Grid item lg={5} md={5} sm={6} xs={12}>
             <ProgressionScolaire />
           </Grid>
-<<<<<<< HEAD
           <Grid item lg={7} md={7} sm={12} xs={12}>
             <Sport />
           </Grid>
-          <Grid item lg={7} sm={6} md={7} xs={12}>
-            <CompteBancaire />
-            <Divider/>
-            <CarteBancaire />
-            
-           
-          </Grid>
-
-          
-
-=======
-
-          <Grid item lg={7} md={7} sm={12} xs={12}>
-            <Sport />
-          </Grid>
-
           <Grid item lg={12} sm={12} md={12} xs={12}>
             <CompteBancaire />
           </Grid>
-
-          <Grid item lg={12} sm={12} md={12} xs={12}>
-            <CarteBancaire />
-          </Grid>
-
-          <Grid item lg={4} md={6} xl={3} xs={12}>
-            <LatestProducts />
-          </Grid>
-
-          <Grid item lg={8} md={12} xl={9} xs={12}>
-            <LatestOrders />
-          </Grid>
->>>>>>> f4bb9016e1ec4095ad7dc88337d3371626be270a
         </Grid>
       </Container>
     </Page>
