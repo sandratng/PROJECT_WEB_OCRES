@@ -30,6 +30,7 @@ const CompteBancaire = ({ className, ...rest }) => {
       <CardHeader title="Solde Bancaire" />
       <Divider />
       <CardContent display="flex">
+      <Box height={100} position="relative">
         <Grid
           container
           display="flex"
@@ -93,6 +94,7 @@ const CompteBancaire = ({ className, ...rest }) => {
           </Grid>
         </Grid>
         <Box mt={2} display="flex" alignItems="center"></Box>
+        </Box>
       </CardContent>
     </Card>
   );
