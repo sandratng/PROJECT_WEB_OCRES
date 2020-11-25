@@ -9,23 +9,27 @@ import {
   CardHeader,
   makeStyles,
   Grid,
-  Divider,
+  Divider
 } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
   root: {},
+  buttonName: {
+    marginRight: theme.spacing(1)
+  },
   textField: {
-    width: '22ch'
+    width: '20ch'
   }
 }));
 
-const AdminNotes = ({ className, ...rest }) => {
+const AjouterUtilisateur = ({ className, ...rest }) => {
   const classes = useStyles();
 
   return (
+
       <Card className={clsx(classes.root, className)} {...rest} display="flex">
-        <CardHeader title="Tu travailles bien ?" />
+        <CardHeader title="Ajouter un utilisateur" />
         <Divider />
         <CardContent display="flex">
           <Grid
@@ -36,19 +40,10 @@ const AdminNotes = ({ className, ...rest }) => {
             spacing={5}
           >
             <Grid item display="flex">
-              <TextField
-              required
-                className={classes.textField}
-                id="filled-number"
-                label="Numéro du semestre"
-                type="number"
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
+            <TextField required id="Prenom" label="Prénom" defaultValue=" " className={classes.textField}/>
             </Grid>
             <Grid item display="flex">
-            <TextField required id="moyenne" label="Moyenne" defaultValue=" " className={classes.textField}/>
+            <TextField required id="Nom" label="Nom" defaultValue=" " className={classes.textField}/>
             </Grid>
             <Grid item display="flex">
               <Box display="flex" justifyContent="flex-end" p={2}>
@@ -61,7 +56,7 @@ const AdminNotes = ({ className, ...rest }) => {
                     color: 'white'
                   }}
                 >
-                  Valider
+                  Ajouter
                 </Button>
               </Box>
             </Grid>
@@ -71,8 +66,8 @@ const AdminNotes = ({ className, ...rest }) => {
   );
 };
 
-AdminNotes.propTypes = {
+AjouterUtilisateur.propTypes = {
   className: PropTypes.string
 };
 
-export default AdminNotes;
+export default AjouterUtilisateur;
