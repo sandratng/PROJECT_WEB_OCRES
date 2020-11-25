@@ -9,7 +9,7 @@ import {
   CardHeader,
   makeStyles,
   Grid,
-  Typography
+  Divider,
 } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
@@ -17,6 +17,9 @@ const useStyles = makeStyles(theme => ({
   root: {},
   buttonName: {
     marginRight: theme.spacing(1)
+  },
+  textField: {
+    width: '20ch'
   }
 }));
 
@@ -45,93 +48,64 @@ const AdminSommeil = ({ className, ...rest }) => {
       <Box mt={3}>
         <Card>
           <CardHeader title="Tu as bien dormi ?" />
+          <Divider />
           <CardContent>
             <Box height={60} position="relative">
-              <Grid container justify="space-between" spacing={3}>
+              <Grid container justify="space-between" spacing={4}>
                 <Grid item>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <Typography
-                        color="textSecondary"
-                        gutterBottom
-                        variant="h6"
-                      >
-                        Date
-                      </Typography>
-                    </Grid>
-                    <Grid item>
-                      <form className={classes.container} noValidate>
-                        <TextField
-                          id="date"
-                          type="date"
-                          defaultValue="2020-05-24"
-                          className={classes.textField}
-                          InputLabelProps={{
-                            shrink: true
-                          }}
-                        />
-                      </form>
-                    </Grid>
-                  </Grid>
+                  <form className={classes.container} noValidate>
+                    <TextField
+                      required
+                      id="date"
+                      label="Date"
+                      type="date"
+                      defaultValue="2020-05-24"
+                      className={classes.textField}
+                    />
+                  </form>
                 </Grid>
                 <Grid item>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <Typography
-                        color="textSecondary"
-                        gutterBottom
-                        variant="h6"
-                      >
-                        Heure de coucher
-                      </Typography>
-                    </Grid>
-                    <Grid item>
-                      <form className={classes.container} noValidate>
-                        <TextField
-                          id="time"
-                          type="time"
-                          defaultValue="18:30"
-                          className={classes.textField}
-                          InputLabelProps={{
-                            shrink: true
-                          }}
-                          inputProps={{
-                            step: 300 // 5 min
-                          }}
-                        />
-                      </form>
-                    </Grid>
-                  </Grid>
+                  <form className={classes.container} noValidate>
+                    <TextField
+                      required
+                      id="time"
+                      label="Heure de coucher"
+                      type="time"
+                      defaultValue="18:30"
+                      className={classes.textField}
+                      InputLabelProps={{
+                        shrink: true
+                      }}
+                      inputProps={{
+                        step: 300 // 5 min
+                      }}
+                    />
+                  </form>
                 </Grid>
+
                 <Grid item>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <Typography
-                        color="textSecondary"
-                        gutterBottom
-                        variant="h6"
-                      >
-                        Heure de réveil
-                      </Typography>
-                    </Grid>
-                    <Grid item>
-                      <form className={classes.container} noValidate>
-                        <TextField
-                          id="time"
-                          type="time"
-                          defaultValue="18:30"
-                          className={classes.textField}
-                          InputLabelProps={{
-                            shrink: true
-                          }}
-                          inputProps={{
-                            step: 300 // 5 min
-                          }}
-                        />
-                      </form>
-                    </Grid>
-                  </Grid>
+                  <form className={classes.container} noValidate>
+                    <TextField
+                      required
+                      id="time"
+                      label="Heure de réveil"
+                      type="time"
+                      defaultValue="06:00"
+                      className={classes.textField}
+                      InputLabelProps={{
+                        shrink: true
+                      }}
+                      inputProps={{
+                        step: 300 // 5 min
+                      }}
+                    />
+                  </form>
                 </Grid>
+                <Box display="flex" justifyContent="flex-end" p={2}>
+                  <Button color="success" size="small" variant="text">
+                    Valider
+                  </Button>
+                </Box>
               </Grid>
             </Box>
           </CardContent>
