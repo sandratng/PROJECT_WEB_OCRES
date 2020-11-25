@@ -1,10 +1,9 @@
 import React from 'react';
-import { Container, Grid, Divider, makeStyles } from '@material-ui/core';
+import { Container, Grid, makeStyles } from '@material-ui/core';
 import Page from 'src/components/Page';
 import Sommeil from './Sommeil';
 import Meteo from './Meteo';
 import ToDoList from './ToDoList';
-
 import ProgressionScolaire from './ProgressionScolaire';
 import Sport from './Sport';
 import LatestOrders from './LatestOrders';
@@ -28,7 +27,6 @@ const Dashboard = () => {
     <Page className={classes.root} title="ECE Dashboard">
       <Container maxWidth={false}>
         <Grid container spacing={3}>
-
           <Grid item lg={5} sm={6} md={5} xs={12}>
             <Sommeil />
           </Grid>
@@ -45,24 +43,17 @@ const Dashboard = () => {
             <ProgressionScolaire />
           </Grid>
 
-          <Grid item lg={7} sm={6} md={7} xs={12}>
-            <CompteBancaire />
-            <Divider/>
-            <CarteBancaire />
-            
-           
-          </Grid>
-
-          
           <Grid item lg={7} md={7} sm={12} xs={12}>
             <Sport />
           </Grid>
 
-          <Grid item lg={3} md={3} sm={3} xs={12}>
-            <TotalCustomers />
+          <Grid item lg={12} sm={12} md={12} xs={12}>
+            <CompteBancaire />
           </Grid>
 
- 
+          <Grid item lg={12} sm={12} md={12} xs={12}>
+            <CarteBancaire />
+          </Grid>
 
           <Grid item lg={4} md={6} xl={3} xs={12}>
             <LatestProducts />
