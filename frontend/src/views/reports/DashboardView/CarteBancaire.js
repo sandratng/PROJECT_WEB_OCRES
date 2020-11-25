@@ -1,10 +1,8 @@
 import React from 'react';
-import { Line } from 'react-chartjs-2';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import logoSGpng from './logoSGpng.png';
 import {
-    Avatar,
     Box,
     Card,
     CardContent,
@@ -12,24 +10,19 @@ import {
     Divider,
     CardHeader,
     Typography,
-    useTheme,
-    colors,
     makeStyles
 } from '@material-ui/core';
-import typography from 'src/theme/typography';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
-import PeopleIcon from '@material-ui/icons/PeopleOutlined';
+
 const useStyles = makeStyles(() => ({
     root: {}
   }));
 
   const CarteBancaire = ({ className, ...rest }) => {
     const classes = useStyles();
-    const theme = useTheme();
   
-    const data = [
+    /*const data = [
         {nom:"Da silva",
-        prenom:"Helena",
+        prenom:"Elena",
         numéro :'9999 8888 7777 6666'
     },
     {nom:"Anjou",
@@ -38,28 +31,8 @@ const useStyles = makeStyles(() => ({
     }
  
 
-    ];
-    const options = {
-       
-        animation: false,
-        cornerRadius: 20,
-        layout: { padding: 0 },
-        legend: { display: false },
-        maintainAspectRatio: false,
-        responsive: true,
-
-        tooltips: {
-          backgroundColor: theme.palette.background.default,
-          bodyFontColor: theme.palette.text.secondary,
-          borderColor: theme.palette.divider,
-          borderWidth: 1,
-          enabled: true,
-          footerFontColor: theme.palette.text.secondary,
-          intersect: false,
-          mode: 'index',
-          titleFontColor: theme.palette.text.primary
-        }
-      };
+    ];*/
+    
       return (
         <Card
           className={clsx(classes.root, className)}
@@ -121,7 +94,7 @@ const useStyles = makeStyles(() => ({
                   variant="h5"
                 color="red"
                 >
-                 Da Silva Helena 
+                 Da Silva Elena 
                 </Typography>
               </Grid>
             </Grid>
