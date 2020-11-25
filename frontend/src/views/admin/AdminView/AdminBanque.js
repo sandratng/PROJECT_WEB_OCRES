@@ -30,7 +30,7 @@ const AdminBanque = ({ className, ...rest }) => {
   const classes = useStyles();
 
   const [values, setValues] = React.useState({
-    amount: ''
+    amount: '',
   });
 
   const handleChange = prop => event => {
@@ -38,7 +38,6 @@ const AdminBanque = ({ className, ...rest }) => {
   };
 
   return (
-    <Box mt={3}>
       <Card className={clsx(classes.root, className)} {...rest} display="flex">
         <CardHeader title="Ton argent" />
         <Divider />
@@ -52,7 +51,9 @@ const AdminBanque = ({ className, ...rest }) => {
           >
             <Grid item display="flex">
               <FormControl fullWidth className={classes.textField}>
-                <InputLabel>Dernier débit</InputLabel>
+                <InputLabel>
+                  Dernier débit
+                </InputLabel>
                 <Input
                   id="debit"
                   value={values.amount}
@@ -64,8 +65,10 @@ const AdminBanque = ({ className, ...rest }) => {
               </FormControl>
             </Grid>
             <Grid item display="flex">
-              <FormControl fullWidth className={classes.textField}>
-                <InputLabel>Dernier crédit</InputLabel>
+            <FormControl fullWidth className={classes.textField}>
+                <InputLabel>
+                  Dernier crédit
+                </InputLabel>
                 <Input
                   id="credit"
                   value={values.amount}
@@ -77,8 +80,10 @@ const AdminBanque = ({ className, ...rest }) => {
               </FormControl>
             </Grid>
             <Grid item display="flex">
-              <FormControl fullWidth className={classes.textField}>
-                <InputLabel>Solde</InputLabel>
+            <FormControl fullWidth className={classes.textField}>
+                <InputLabel>
+                  Solde
+                </InputLabel>
                 <Input
                   id="solde"
                   value={values.amount}
@@ -107,7 +112,6 @@ const AdminBanque = ({ className, ...rest }) => {
           </Grid>
         </CardContent>
       </Card>
-    </Box>
   );
 };
 

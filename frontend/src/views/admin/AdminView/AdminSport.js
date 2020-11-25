@@ -27,7 +27,6 @@ const AdminSport = ({ className, ...rest }) => {
   const classes = useStyles();
 
   return (
-    <Box mt={3}>
       <Card className={clsx(classes.root, className)} {...rest} display="flex">
         <CardHeader title="Tu as fait du sport ?" />
         <Divider />
@@ -87,7 +86,7 @@ const AdminSport = ({ className, ...rest }) => {
           </Grid>
         </CardContent>
       </Card>
-    </Box>
+
   );
 };
 
