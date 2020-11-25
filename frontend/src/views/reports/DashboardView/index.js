@@ -44,7 +44,9 @@ const Dashboard = () => {
           <Grid item lg={5} md={5} sm={6} xs={12}>
             <ProgressionScolaire />
           </Grid>
-
+          <Grid item lg={7} md={7} sm={12} xs={12}>
+            <Sport />
+          </Grid>
           <Grid item lg={7} sm={6} md={7} xs={12}>
             <CompteBancaire />
             <Divider/>
@@ -54,23 +56,7 @@ const Dashboard = () => {
           </Grid>
 
           
-          <Grid item lg={7} md={7} sm={12} xs={12}>
-            <Sport />
-          </Grid>
 
-          <Grid item lg={3} md={3} sm={3} xs={12}>
-            <TotalCustomers />
-          </Grid>
-
- 
-
-          <Grid item lg={4} md={6} xl={3} xs={12}>
-            <LatestProducts />
-          </Grid>
-
-          <Grid item lg={8} md={12} xl={9} xs={12}>
-            <LatestOrders />
-          </Grid>
         </Grid>
       </Container>
     </Page>
