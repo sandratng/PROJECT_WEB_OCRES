@@ -15,28 +15,28 @@ import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
   root: {},
+  buttonName: {
+    marginRight: theme.spacing(1)
+  },
   textField: {
     width: '20ch'
   },
 }));
 
-const AdminSommeil = ({ className, ...rest }) => {
+const AdminBanque = ({ className, ...rest }) => {
   const classes = useStyles();
 
   return (
-<Card className={clsx(classes.root, className)} {...rest} display="flex">
-    <CardHeader title="Tu as bien dormi ?" />
-      <Divider />
-      <CardContent display="flex">
-        <Grid
-          container
-          display="flex"
-          flex-direction="row"
-          justify="space-between"
-          spacing={5}
-        >
-          <Grid item display="flex">
-          <form className={classes.container} noValidate>
+    <div className={clsx(classes.root, className)} {...rest}>
+      <Box mt={3}>
+        <Card>
+          <CardHeader title="Ton argent" />
+          <Divider />
+          <CardContent>
+            <Box height={60} position="relative">
+              <Grid container justify="space-between" spacing={4}>
+                <Grid item>
+                  <form className={classes.container} noValidate>
                     <TextField
                       required
                       id="date"
@@ -46,9 +46,9 @@ const AdminSommeil = ({ className, ...rest }) => {
                       className={classes.textField}
                     />
                   </form>
-          </Grid>
-          <Grid item display="flex">
-          <form className={classes.container} noValidate>
+                </Grid>
+                <Grid item>
+                  <form className={classes.container} noValidate>
                     <TextField
                       required
                       id="time"
@@ -64,9 +64,10 @@ const AdminSommeil = ({ className, ...rest }) => {
                       }}
                     />
                   </form>
-          </Grid>
-          <Grid item display="flex">
-          <form className={classes.container} noValidate>
+                </Grid>
+
+                <Grid item>
+                  <form className={classes.container} noValidate>
                     <TextField
                       required
                       id="time"
@@ -82,9 +83,8 @@ const AdminSommeil = ({ className, ...rest }) => {
                       }}
                     />
                   </form>
-          </Grid>
-          <Grid item display="flex">
-          <Box display="flex" justifyContent="flex-end" p={2}>
+                </Grid>
+                <Box display="flex" justifyContent="flex-end" p={2}>
                   <Button
                     size="small"
                     variant="text"
@@ -97,16 +97,17 @@ const AdminSommeil = ({ className, ...rest }) => {
                     Valider
                   </Button>
                 </Box>
-          </Grid>
-        </Grid>
-        <Box mt={2} display="flex" alignItems="center"></Box>
-      </CardContent>
-    </Card>
+              </Grid>
+            </Box>
+          </CardContent>
+        </Card>
+      </Box>
+    </div>
   );
 };
 
-AdminSommeil.propTypes = {
+AdminBanque.propTypes = {
   className: PropTypes.string
 };
 
-export default AdminSommeil;
+export default AdminBanque;
