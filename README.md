@@ -1,23 +1,24 @@
 # Projet de fin de semestre
 
-A lire impérativement avant de commencer quoi que ce soit, ce sont les règles que vous devrez appliquer tout au long du semestre:
+Les consignes se trouvent sur ce [lien] (https://github.com/sandratng/PROJECT_WEB_OCRES/blob/master/Projet%20Dashboard.pdf).
 
-<p align="center">
- <a href="https://gitlab.com/Adrien_Kourganoff/instructions_web_ocres_ing4/-/blob/master/README.md">Règles pour le semestre</a>
-</p>
+## Installation
 
-## Introduction
+* Installer les dépendances : ``npm install``
+* Démarrer le serveur : ``npm start``
+* L'aperçu du programme se trouve sur ``localhost::3000``
 
-Ce repo git contient deux repertoires. L'un concerne la partie backend et l'autre la partie frontend.
+## Auteurs
 
-Les deux repertoires ont été initialisé pour vous aider à démarrer le projet dans les meilleures conditions.
+* **Oumar Anne** OCRES TD2B _alias_ [@oumar1304](https://github.com/oumar1304)
+* **Grâce Gnenago** OCRES TD2B _alias_ [@graceyt20](https://github.com/graceyt20)
+* **Sandra Tang** OCRES TD2A _alias_ [@sandratng](https://github.com/sandratng)
 
-Chacun de ces repertoires contient un README.md qui vous pouvez vous approprier. Nous vous encourageons à le faire en y mettant toute les informations nécessaires à la compréhension de votre projet
+## Sources
 
-## Instructions
+* [ReactJS] (https://fr.reactjs.org/)
+* [ChartJS] (https://www.chartjs.org/)
+* [Dashboard] (https://github.com/devias-io/react-material-dashboard)
 
-Les instructions sont à retrouver dans le pdf instruction.pdf.
 
-**Le non respect de ces instructions entraînera des pertes de points alors prenez le temps de tout lire et de poser des questions si vous ne comprenez pas**
 
-Pour rappel, la probabilité de recevoir une réponse à un mail envoyé quelques heures avant le rendu est très proche de 0.
