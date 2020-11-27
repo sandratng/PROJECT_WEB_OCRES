@@ -1,6 +1,6 @@
 # Projet de fin de semestre
 
-Les consignes se trouvent sur ce [lien] (https://github.com/sandratng/PROJECT_WEB_OCRES/blob/master/Projet%20Dashboard.pdf).
+Les consignes se trouvent sur ce [lien](https://github.com/sandratng/PROJECT_WEB_OCRES/blob/master/Projet%20Dashboard.pdf).
 
 ## Installation
 
@@ -16,9 +16,9 @@ Les consignes se trouvent sur ce [lien] (https://github.com/sandratng/PROJECT_WE
 
 ## Sources
 
-* [ReactJS] (https://fr.reactjs.org/)
-* [ChartJS] (https://www.chartjs.org/)
-* [Dashboard] (https://github.com/devias-io/react-material-dashboard)
+* [ReactJS](https://fr.reactjs.org/)
+* [ChartJS](https://www.chartjs.org/)
+* [Dashboard](https://github.com/devias-io/react-material-dashboard)
 
 
 
