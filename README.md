@@ -6,7 +6,7 @@ Les consignes se trouvent sur ce [lien](https://github.com/sandratng/PROJECT_WEB
 
 * Installer les dépendances : ``npm install``
 * Démarrer le serveur : ``npm start``
-* L'aperçu du programme se trouve sur ``localhost::3000``
+* L'aperçu du programme se trouve sur : ``localhost::3000``
 
 ## Auteurs
 
@@ -21,6 +21,7 @@ Les consignes se trouvent sur ce [lien](https://github.com/sandratng/PROJECT_WEB
 * [Dashboard](https://github.com/devias-io/react-material-dashboard)
 * [StackOverFlow](https://stackoverflow.com/)
 * [To Do List](https://github.com/mastro-elfo/todo-react/tree/master/src/components?fbclid=IwAR2X7iibO8F8qE12FEjRhqcEoJIg26hK86wzP9Le2LduTlDAV-34qRvcI7Y)
+* [TP 3 - API Weather](https://github.com/sandratng/TP3_WEB_OCRES)
 
 
 
