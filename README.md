@@ -19,6 +19,8 @@ Les consignes se trouvent sur ce [lien](https://github.com/sandratng/PROJECT_WEB
 * [ReactJS](https://fr.reactjs.org/)
 * [ChartJS](https://www.chartjs.org/)
 * [Dashboard](https://github.com/devias-io/react-material-dashboard)
+* [StackOverFlow](https://stackoverflow.com/)
+* [To Do List](https://github.com/mastro-elfo/todo-react/tree/master/src/components?fbclid=IwAR2X7iibO8F8qE12FEjRhqcEoJIg26hK86wzP9Le2LduTlDAV-34qRvcI7Y)
 
 
 
