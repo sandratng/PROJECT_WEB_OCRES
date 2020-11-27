@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: theme.typography.fontWeightMedium,
     justifyContent: 'center',
     padding: '10px 8px',
-    width: '10%',
+    width: '15%',
   }
 }));
 
