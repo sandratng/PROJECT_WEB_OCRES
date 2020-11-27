@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, makeStyles, Grid } from '@material-ui/core';
+import { Container, makeStyles, Grid, GridList } from '@material-ui/core';
 import Page from 'src/components/Page';
 import AdminSommeil from './AdminSommeil';
 import AdminSport from './AdminSport';
 import AdminBanque from './AdminBanque';
 import AdminNotes from './AdminNotes';
-import ButtonNames from './ButtonNames';
+import ButtonName from './ButtonName';
 import AjouterUtilisateur from './AjouterUtilisateur';
 import SuppUtilisateur from './SuppUtilisateur';
 
@@ -21,10 +21,25 @@ const useStyles = makeStyles(theme => ({
 const AdminView = () => {
   const classes = useStyles();
 
+  const buttonName = [
+    {
+      href: '/app/dashboard',
+      title: 'Elena'
+    },
+    {
+      href: '/app/admin',
+      title: 'Paul'
+    }
+  ];
+
   return (
     <Page className={classes.root} title="ECE Dashboard - Admin">
       <Container maxWidth={false}>
-        <ButtonNames lg={12} sm={12} md={12} xs={12} />
+        <GridList cellHeight={60} className={classes.gridList} cols={10}>
+          {buttonName.map(buttonName => (
+            <ButtonName href={buttonName.href} title={buttonName.title} />
+          ))}
+        </GridList>
         <Grid container spacing={3}>
           <Grid item lg={12} sm={12} md={12} xs={12}>
             <AdminSommeil />

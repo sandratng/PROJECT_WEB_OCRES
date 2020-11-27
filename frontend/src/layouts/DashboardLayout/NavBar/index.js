@@ -102,7 +102,6 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           {items.map((item) => (
             <NavItem
               href={item.href}
-              key={item.title}
               title={item.title}
               icon={item.icon}
             />
