@@ -39,12 +39,35 @@ const Dashboard = () => {
           <Grid item lg={5} md={5} sm={6} xs={12}>
             <ProgressionScolaire />
           </Grid>
+<<<<<<< Updated upstream
           <Grid item lg={7} md={7} sm={12} xs={12}>
             <Sport />
           </Grid>
           <Grid item lg={12} sm={12} md={12} xs={12}>
             <CompteBancaire />
           </Grid>
+=======
+
+          <Grid item lg={7} md={7} sm={12} xs={12}>
+            <Sport />
+          </Grid>
+
+          <Grid item lg={12} sm={12} md={12} xs={12}>
+            <CompteBancaire />
+          </Grid>
+
+          <Grid item lg={12} sm={12} md={12} xs={12}>
+            <CarteBancaire />
+          </Grid>
+
+          <Grid item lg={4} md={6} xl={3} xs={12}>
+            <LatestProducts />
+          </Grid>
+
+          <Grid item lg={8} md={12} xl={9} xs={12}>
+            <LatestOrders />
+          </Grid>
+>>>>>>> Stashed changes
         </Grid>
       </Container>
     </Page>
