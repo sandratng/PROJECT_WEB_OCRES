@@ -87,13 +87,12 @@ const Meteo = ({ className, ...rest }) => {
           >
             Actualiser
           </button>
-                <h2 id="today-forecast-main"></h2>
-                <div>
-                  <p id="today-forecast-more-info"></p>
-                  <div id="icon-weather-container"></div>
-                  <h3 id="today-forecast-temp"> </h3>
-                </div>
-
+          <h2 id="today-forecast-main"></h2>
+          <div>
+            <p id="today-forecast-more-info"></p>
+            <div id="icon-weather-container"></div>
+            <h3 id="today-forecast-temp"> </h3>
+          </div>
         </Box>
       </CardContent>
     </Card>

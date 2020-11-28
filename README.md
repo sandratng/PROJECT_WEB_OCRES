@@ -9,8 +9,14 @@ Nous avons réalisé les wireframes sur [Figma](https://www.figma.com/file/725Lp
 ## Installation
 
 * Installer les dépendances : ``npm install``
+* Installer : ``npm install axios --save``
 * Démarrer le serveur : ``npm start``
 * L'aperçu du programme se trouve sur : ``localhost::3000``
+
+## Storybook
+
+* Installer : ``npx sb init``
+* Démarrer le serveur : ``npm run storybook``
 
 ## Auteurs
 
