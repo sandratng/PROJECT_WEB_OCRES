@@ -7,6 +7,7 @@ import {
   CardContent,
   CardHeader,
   Divider,
+  Typography,
   makeStyles
 } from '@material-ui/core';
 import API_WEATHER from './API_Weather';
@@ -70,7 +71,7 @@ const Meteo = ({ className, ...rest }) => {
       <Divider />
       <CardContent>
         <Box height={200} position="relative">
-          <input
+          <input position="relative"
             id="city-input"
             type="text"
             className="form-control"
@@ -87,7 +88,7 @@ const Meteo = ({ className, ...rest }) => {
           >
             Actualiser
           </button>
-                <h2 id="today-forecast-main"></h2>
+                <Typography variant="h2" id="today-forecast-main"></Typography>
                 <div>
                   <p id="today-forecast-more-info"></p>
                   <div id="icon-weather-container"></div>
