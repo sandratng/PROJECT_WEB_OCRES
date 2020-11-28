@@ -46,7 +46,6 @@ const useStyles = makeStyles(() => ({
     height: 'calc(100% - 64px)'
   },
   avatar: {
-    cursor: 'pointer',
     width: 150,
     height: 150,
     marginBottom: 10
@@ -78,9 +77,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       >
         <Avatar
           className={classes.avatar}
-          component={RouterLink}
           src={user.avatar}
-          to="/app/account"
         />
         <Typography
           className={classes.name}
