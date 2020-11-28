@@ -7,6 +7,9 @@ import ToDoList from './ToDoList';
 import ProgressionScolaire from './ProgressionScolaire';
 import Sport from './Sport';
 import CompteBancaire from './CompteBancaire';
+import CarteBancaire from './CarteBancaire';
+import LatestOrders from './LatestOrders';
+import LatestProducts from './LatestProducts';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -39,14 +42,6 @@ const Dashboard = () => {
           <Grid item lg={5} md={5} sm={6} xs={12}>
             <ProgressionScolaire />
           </Grid>
-<<<<<<< Updated upstream
-          <Grid item lg={7} md={7} sm={12} xs={12}>
-            <Sport />
-          </Grid>
-          <Grid item lg={12} sm={12} md={12} xs={12}>
-            <CompteBancaire />
-          </Grid>
-=======
 
           <Grid item lg={7} md={7} sm={12} xs={12}>
             <Sport />
@@ -67,7 +62,6 @@ const Dashboard = () => {
           <Grid item lg={8} md={12} xl={9} xs={12}>
             <LatestOrders />
           </Grid>
->>>>>>> Stashed changes
         </Grid>
       </Container>
     </Page>
