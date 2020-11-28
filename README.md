@@ -2,6 +2,10 @@
 
 Les consignes se trouvent sur ce [lien](https://github.com/sandratng/PROJECT_WEB_OCRES/blob/master/Projet%20Dashboard.pdf).
 
+## Wireframe
+
+Nous avons réalisé les wireframes sur [Figma](https://www.figma.com/file/725LpZHa3Rcj8psK8YnlQs/Projet-Web?node-id=0%3A1).
+
 ## Installation
 
 * Installer les dépendances : ``npm install``
