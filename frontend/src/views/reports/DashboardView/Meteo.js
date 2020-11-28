@@ -7,7 +7,10 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  makeStyles
+  Typography,
+  Icon,
+  makeStyles,
+  Grid
 } from '@material-ui/core';
 import API_WEATHER from './API_Weather';
 
@@ -70,29 +73,49 @@ const Meteo = ({ className, ...rest }) => {
       <Divider />
       <CardContent>
         <Box height={200} position="relative">
-          <input
-            id="city-input"
-            type="text"
-            className="form-control"
-            placeholder="Rentrer le nom d'une ville"
-            value={nextCity}
-            onChange={e => setNextCity(e.currentTarget.value)}
-          />
-
-          <button
-            id="city-input-button"
-            className="btn btn-success"
-            type="submit"
-            onClick={() => onCityChanged()}
+          <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+            spacing={1}
           >
-            Actualiser
-          </button>
-          <h2 id="today-forecast-main"></h2>
-          <div>
-            <p id="today-forecast-more-info"></p>
-            <div id="icon-weather-container"></div>
-            <h3 id="today-forecast-temp"> </h3>
-          </div>
+            <Grid item display="flex">
+              <input
+                id="city-input"
+                type="text"
+                className="form-control"
+                placeholder="Rentrer le nom d'une ville"
+                value={nextCity}
+                onChange={e => setNextCity(e.currentTarget.value)}
+              />
+            </Grid>
+            <Grid item display="flex">
+              <button
+                id="city-input-button"
+                className="btn btn-success"
+                type="submit"
+                onClick={() => onCityChanged()}
+              >
+                Actualiser
+              </button>
+            </Grid>
+            <Grid item display="flex">
+              <Typography variant="h2" id="today-forecast-main"></Typography>
+            </Grid>
+            <Grid item display="flex">
+              <Typography
+                variant="h4"
+                id="today-forecast-more-info"
+              ></Typography>
+            </Grid>
+            <Grid item display="flex">
+              <Icon id="icon-weather-container"></Icon>
+            </Grid>
+            <Grid item display="flex">
+              <Typography variant="h5" id="today-forecast-temp"></Typography>
+            </Grid>
+          </Grid>
         </Box>
       </CardContent>
     </Card>
