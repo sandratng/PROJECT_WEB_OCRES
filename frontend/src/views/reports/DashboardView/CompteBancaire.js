@@ -30,70 +30,70 @@ const CompteBancaire = ({ className, ...rest }) => {
       <CardHeader title="Solde Bancaire" />
       <Divider />
       <CardContent display="flex">
-      <Box height={100} position="relative">
-        <Grid
-          container
-          display="flex"
-          flex-direction="row"
-          justify="space-between"
-          spacing={10}
-        >
-          <Grid item display="flex">
-            <Typography
-              color="Red"
-              gutterBottom
-              variant="h4"
-              style={{ color: 'red' }}
-            >
-              -10,99€
-            </Typography>
-            <Typography
-              color="Red"
-              gutterBottom
-              variant="h6"
-              style={{ color: 'Black' }}
-            >
-              Dernier débit
-            </Typography>
+        <Box height={100} position="relative">
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="center"
+            spacing={10}
+          >
+            <Grid item display="flex">
+              <Typography
+                color="Red"
+                gutterBottom
+                variant="h4"
+                style={{ color: 'red' }}
+              >
+                -10,99€
+              </Typography>
+              <Typography
+                color="Red"
+                gutterBottom
+                variant="h6"
+                style={{ color: 'Black' }}
+              >
+                Dernier débit
+              </Typography>
+            </Grid>
+            <Grid item display="flex">
+              <Typography
+                gutterBottom
+                variant="h4"
+                color="red"
+                style={{ color: 'green' }}
+              >
+                +52,00€
+              </Typography>
+              <Typography
+                gutterBottom
+                variant="h6"
+                color="red"
+                style={{ color: 'Black' }}
+              >
+                Dernier crédit
+              </Typography>
+            </Grid>
+            <Grid item display="flex">
+              <Typography
+                gutterBottom
+                variant="h4"
+                color="red"
+                style={{ color: 'blue' }}
+              >
+                +531,37€
+              </Typography>
+              <Typography
+                gutterBottom
+                variant="h6"
+                color="red"
+                style={{ color: 'Black' }}
+              >
+                Solde
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item display="flex">
-            <Typography
-              gutterBottom
-              variant="h4"
-              color="red"
-              style={{ color: 'green' }}
-            >
-              +52,00€
-            </Typography>
-            <Typography
-              gutterBottom
-              variant="h6"
-              color="red"
-              style={{ color: 'Black' }}
-            >
-              Dernier crédit
-            </Typography>
-          </Grid>
-          <Grid item display="flex">
-            <Typography
-              gutterBottom
-              variant="h4"
-              color="red"
-              style={{ color: 'blue' }}
-            >
-              +531,37€
-            </Typography>
-            <Typography
-              gutterBottom
-              variant="h6"
-              color="red"
-              style={{ color: 'Black' }}
-            >
-              Solde
-            </Typography>
-          </Grid>
-        </Grid>
-        <Box mt={2} display="flex" alignItems="center"></Box>
+          <Box mt={2} display="flex" alignItems="center"></Box>
         </Box>
       </CardContent>
     </Card>
