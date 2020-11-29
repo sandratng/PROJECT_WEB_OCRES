@@ -15,9 +15,11 @@ Les consignes du projet se trouvent sur ce [lien](https://github.com/sandratng/P
 * :chart_with_upwards_trend: Surveiller les **statistiques de la Covid-19**
 
 ## Installation
+* Cloner le projet dans un répertoire puis:
 
 * Installer les dépendances : ``npm install``
 * Installer : ``npm install axios --save``
+* Installer : ``npm i styled-components``
 * Démarrer le serveur : ``npm start``
 * Ouvrir dans votre navigateur : ``localhost::3000``
 
