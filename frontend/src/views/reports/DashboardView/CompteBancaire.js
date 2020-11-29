@@ -93,7 +93,6 @@ const CompteBancaire = ({ className, ...rest }) => {
               </Typography>
             </Grid>
           </Grid>
-          <Box mt={2} display="flex" alignItems="center"></Box>
         </Box>
       </CardContent>
     </Card>
