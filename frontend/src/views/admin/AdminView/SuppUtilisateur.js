@@ -28,31 +28,22 @@ const SuppUtilisateur = ({ className, ...rest }) => {
 
   return (
     <Card className={clsx(classes.root, className)} {...rest} display="flex">
-    <CardHeader title="Tu travailles bien ?" />
-    <Divider />
-    <CardContent display="flex">
-      <Grid
-        container
-        display="flex"
-        flex-direction="row"
-        justify="space-between"
-        spacing={5}
-      >
-        <Grid item display="flex">
-          <TextField
-          required
-            className={classes.textField}
-            id="filled-number"
-            label="Numéro du semestre"
-            type="number"
-            InputLabelProps={{
-              shrink: true
-            }}
-          />
-        </Grid>
-        <Grid item display="flex">
-        <TextField required id="moyenne" label="Moyenne" defaultValue=" " className={classes.textField}/>
-        </Grid>
+        <CardHeader title="Supprimer un utilisateur" />
+        <Divider />
+        <CardContent display="flex">
+          <Grid
+            container
+            display="flex"
+            flex-direction="row"
+            justify="space-between"
+            spacing={5}
+          >
+            <Grid item display="flex">
+            <TextField required id="Prenom" label="Prénom" defaultValue=" " className={classes.textField}/>
+            </Grid>
+            <Grid item display="flex">
+            <TextField required id="Nom" label="Nom" defaultValue=" " className={classes.textField}/>
+            </Grid>
         <Grid item display="flex">
           <Box display="flex" justifyContent="flex-end" p={2}>
             <Button
