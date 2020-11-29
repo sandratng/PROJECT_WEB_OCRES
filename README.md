@@ -1,8 +1,8 @@
 # Projet de fin de semestre
 
-ECE Dashboard regroupe des widgets utiles pour son quotidien : 
-:zzz: Un widget pour voir notre temps de sommeil
-:sunny: Un wiget pour connaître la météo
+ECE Dashboard regroupe des widgets utiles pour son quotidien :  
+:zzz: Un widget pour voir notre temps de sommeil  
+:sunny: Un wiget pour connaître la météo  
 
 
 Les consignes se trouvent sur ce [lien](https://github.com/sandratng/PROJECT_WEB_OCRES/blob/master/Projet%20Dashboard.pdf).
