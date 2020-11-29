@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 
 const Buttonstyle = styled.button`
@@ -9,7 +8,7 @@ const Buttonstyle = styled.button`
   border-radius: 5px;
   margin: 5px 0px;
   cursor: pointer;
-  outline: 0;
+
   &: hover{
     background-color: #876DE6;
   }

@@ -73,14 +73,17 @@ const Meteo = ({ className, ...rest }) => {
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
       <CardHeader title="Météo" />
-      <Grid
+      <Divider />
+<CardContent>
+        <Box height={200} position="relative">
+          <Grid
             container
             direction="column"
             justify="center"
             alignItems="center"
-            spacing={1}
           >
-      <Grid item display="flex">
+
+<Grid item display="flex">
               <input
                 id="city-input"
                 type="text"
@@ -100,17 +103,7 @@ const Meteo = ({ className, ...rest }) => {
                 Actualiser
               </Buttonstyle>
             </Grid>
-            </Grid>
-      <Divider />
-      <CardContent>
-        <Box height={200} position="relative">
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-            spacing={1}
-          >
+
             
             <Grid item display="flex">
               <Typography variant="h2" id="today-forecast-main"></Typography>
