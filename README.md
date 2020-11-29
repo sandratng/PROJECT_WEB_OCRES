@@ -14,18 +14,22 @@ Les consignes du projet se trouvent sur ce [lien](https://github.com/sandratng/P
 * :laughing: Rigoler à des **blagues**  
 * :chart_with_upwards_trend: Surveiller les **statistiques de la Covid-19**
 
-## Wireframes
-
-Nous avons réalisé les wireframes sur [Figma](https://www.figma.com/file/725LpZHa3Rcj8psK8YnlQs/Projet-Web?node-id=0%3A1).
-
-![](frontend/src/figma.gif| width=500)
-
 ## Installation
 
 * Installer les dépendances : ``npm install``
 * Installer : ``npm install axios --save``
 * Démarrer le serveur : ``npm start``
 * Ouvrir dans votre navigateur : ``localhost::3000``
+
+## Wireframes
+
+Nous avons réalisé les wireframes sur [Figma](https://www.figma.com/file/725LpZHa3Rcj8psK8YnlQs/Projet-Web?node-id=0%3A1).
+
+![Gif](frontend/src/figma.gif){:height="50%" width="50%"}
+
+## Outil de gestion de travail
+
+Nous nous sommes organisés avec l'outil [Trello](https://trello.com/invite/b/XOKOmRRS/6a5c8df43ceb51a54d694aa6df9ebfc5/projet-react).
 
 ## Auteurs
 
