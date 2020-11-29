@@ -73,7 +73,7 @@ const Meteo = ({ className, ...rest }) => {
       <CardHeader title="Météo" />
       <Divider />
       <CardContent>
-        <Box height={200} position="relative">
+        <Box height={230} position="relative">
           <Grid
             container
             direction="column"
