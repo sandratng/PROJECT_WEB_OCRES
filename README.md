@@ -1,5 +1,7 @@
 # Projet de fin de semestre
 
+Les consignes du projet se trouvent sur ce [lien](https://github.com/sandratng/PROJECT_WEB_OCRES/blob/master/Projet%20Dashboard.pdf).
+
 **ECE Dashboard** regroupe des widgets utiles pour son **quotidien**. Il y a des widgets pour :  
 
 * :zzz: Voir son **temps de sommeil**  
@@ -12,12 +14,11 @@
 * :laughing: Rigoler à des **blagues**  
 * :chart_with_upwards_trend: Surveiller les **statistiques de la Covid-19**
 
-
-Les consignes se trouvent sur ce [lien](https://github.com/sandratng/PROJECT_WEB_OCRES/blob/master/Projet%20Dashboard.pdf).
-
 ## Wireframe
 
 Nous avons réalisé les wireframes sur [Figma](https://www.figma.com/file/725LpZHa3Rcj8psK8YnlQs/Projet-Web?node-id=0%3A1).
+
+![Figma Demo](figma.gif)
 
 ## Installation
 
@@ -25,11 +26,6 @@ Nous avons réalisé les wireframes sur [Figma](https://www.figma.com/file/725Lp
 * Installer : ``npm install axios --save``
 * Démarrer le serveur : ``npm start``
 * Ouvrir dans votre navigateur : ``localhost::3000``
-
-## Storybook
-
-* Installer : ``npx sb init``
-* Démarrer le serveur : ``npm run storybook``
 
 ## Auteurs
 
