@@ -33,6 +33,7 @@ Nous avons réalisé les wireframes sur [Figma](https://www.figma.com/file/725Lp
 * [To Do List](https://github.com/mastro-elfo/todo-react/tree/master/src/components?fbclid=IwAR2X7iibO8F8qE12FEjRhqcEoJIg26hK86wzP9Le2LduTlDAV-34qRvcI7Y)
 * [TP 3 - API Weather](https://github.com/sandratng/TP3_WEB_OCRES)
 * [PedroTech](https://www.youtube.com/watch?v=rpg1jOvGCtQ&t=452s&ab_channel=PedroTech)
+* [Devise](https://github.com/WebDevSimplified/React-Currency-Converter)
 
 
 

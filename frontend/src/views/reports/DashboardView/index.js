@@ -8,8 +8,8 @@ import ProgressionScolaire from './ProgressionScolaire';
 import Sport from './Sport';
 import CompteBancaire from './CompteBancaire';
 import Jokes from './Jokes';
+import Devise from './Devise';
 import LatestOrders from './LatestOrders';
-import LatestProducts from './LatestProducts';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -51,12 +51,12 @@ const Dashboard = () => {
             <CompteBancaire />
           </Grid>
 
-          <Grid item lg={12} sm={12} md={12} xs={12}>
-            <Jokes />
+          <Grid item lg={6}  md={6} sm={6} xs={12}>
+            <Devise />
           </Grid>
 
-          <Grid item lg={4} md={6} xl={3} xs={12}>
-            <LatestProducts />
+          <Grid item lg={6}  md={6} sm={6} xs={12}>
+            <Jokes />
           </Grid>
 
           <Grid item lg={8} md={12} xl={9} xs={12}>

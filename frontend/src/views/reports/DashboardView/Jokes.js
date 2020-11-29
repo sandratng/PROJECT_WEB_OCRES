@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
   root: {}
 }));
 
-const CompteBancaire = ({ className, ...rest }) => {
+const Jokes = ({ className, ...rest }) => {
   const classes = useStyles();
 
   const [joke, setJoke] = useState('');
@@ -53,8 +53,8 @@ const CompteBancaire = ({ className, ...rest }) => {
   );
 };
 
-CompteBancaire.propTypes = {
+Jokes.propTypes = {
   className: PropTypes.string
 };
 
-export default CompteBancaire;
+export default Jokes;
