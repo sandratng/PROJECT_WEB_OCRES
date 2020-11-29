@@ -1,5 +1,8 @@
 # Projet de fin de semestre
 
+ECE Dashboard regroupe des widgets utiles pour son quotidien : 
+- Un widget :zzz:
+
 Les consignes se trouvent sur ce [lien](https://github.com/sandratng/PROJECT_WEB_OCRES/blob/master/Projet%20Dashboard.pdf).
 
 ## Wireframe
