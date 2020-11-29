@@ -1,15 +1,16 @@
 # Projet de fin de semestre
 
 **ECE Dashboard** regroupe des widgets utiles pour son quotidien. Il y a des widgets pour :  
-:zzz: Voir son temps de sommeil  
-:sunny: Connaître la météo  
-:scroll: Ecrire sa to do list  
-:pencil2: Voir l'évolution de ses moyennes scolaires  
-:running: Voir son temps de sport  
-:money_with_wings: Surveiller son solde bancaire  
-:moneybag: Convertir des devices  
-:laughing: Rigoler à des blagues
-:chart_with_upwards_trend: Surveiller les statistiques de la Covid-19
+
+* :zzz: Voir son temps de sommeil  
+* :sunny: Connaître la météo  
+* :scroll: Ecrire sa to do list  
+* :pencil2: Voir l'évolution de ses moyennes scolaires  
+* :running: Voir son temps de sport  
+* :money_with_wings: Surveiller son solde bancaire  
+* :moneybag: Convertir des devices  
+* :laughing: Rigoler à des blagues  
+* :chart_with_upwards_trend: Surveiller les statistiques de la Covid-19
 
 
 Les consignes se trouvent sur ce [lien](https://github.com/sandratng/PROJECT_WEB_OCRES/blob/master/Projet%20Dashboard.pdf).
