@@ -7,6 +7,7 @@ import ToDoList from './ToDoList';
 import ProgressionScolaire from './ProgressionScolaire';
 import Sport from './Sport';
 import CompteBancaire from './CompteBancaire';
+import Jokes from './Jokes';
 import LatestOrders from './LatestOrders';
 import LatestProducts from './LatestProducts';
 
@@ -48,6 +49,10 @@ const Dashboard = () => {
 
           <Grid item lg={12} sm={12} md={12} xs={12}>
             <CompteBancaire />
+          </Grid>
+
+          <Grid item lg={12} sm={12} md={12} xs={12}>
+            <Jokes />
           </Grid>
 
           <Grid item lg={4} md={6} xl={3} xs={12}>
