@@ -38,7 +38,7 @@ export default function NewItem({ onEnter = () => {}, onChange = () => {} }) {
       <ListItem>
         <TextField
           fullWidth
-          label="Add an item"
+          label="Ajouter une tâche"
           ref={ref}
           value={value}
           onChange={handleChange}
@@ -47,7 +47,7 @@ export default function NewItem({ onEnter = () => {}, onChange = () => {} }) {
             endAdornment: (
               <InputAdornment position="end">
                 <IconButton
-                  title="Click to add"
+                  title="Clique pour ajouter"
                   disabled={!value.trim()}
                   onClick={handleAddItem}
                 >

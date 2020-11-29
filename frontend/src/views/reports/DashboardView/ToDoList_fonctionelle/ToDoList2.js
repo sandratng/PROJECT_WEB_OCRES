@@ -4,19 +4,11 @@ import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
 import { createRef, useState } from "react";
 import {
-  Box,
   Card,
   CardContent,
   CardHeader,
   Divider,
-  Typography,
   makeStyles,
-  IconButton,
-  InputAdornment,
-  Checkbox,
-  List,
-  ListItem,
-  TextField,
   useTheme
 } from '@material-ui/core';
 import { useSnackbar } from "notistack";

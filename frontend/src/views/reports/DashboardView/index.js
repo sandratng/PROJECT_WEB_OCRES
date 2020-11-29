@@ -9,7 +9,7 @@ import Sport from './Sport';
 import CompteBancaire from './CompteBancaire';
 import Jokes from './Jokes';
 import Devise from './Devise';
-import LatestOrders from './LatestOrders';
+import API_Covid from './API_Covid';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -59,9 +59,10 @@ const Dashboard = () => {
             <Jokes />
           </Grid>
 
-          <Grid item lg={8} md={12} xl={9} xs={12}>
-            <LatestOrders />
+          <Grid item lg={12}  md={12} sm={12} xs={12}>
+            <API_Covid />
           </Grid>
+
         </Grid>
       </Container>
     </Page>

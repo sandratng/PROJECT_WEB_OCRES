@@ -13,9 +13,7 @@ import {
   Grid
 } from '@material-ui/core';
 import API_WEATHER from './API_Weather';
-import Buttonstyle from './buttonWidget.js'
-
-
+import Buttonstyle from './buttonWidget.js';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -74,7 +72,7 @@ const Meteo = ({ className, ...rest }) => {
     <Card className={clsx(classes.root, className)} {...rest}>
       <CardHeader title="Météo" />
       <Divider />
-<CardContent>
+      <CardContent>
         <Box height={200} position="relative">
           <Grid
             container
@@ -82,8 +80,7 @@ const Meteo = ({ className, ...rest }) => {
             justify="center"
             alignItems="center"
           >
-
-<Grid item display="flex">
+            <Grid item display="flex">
               <input
                 id="city-input"
                 type="text"
@@ -104,7 +101,6 @@ const Meteo = ({ className, ...rest }) => {
               </Buttonstyle>
             </Grid>
 
-            
             <Grid item display="flex">
               <Typography variant="h2" id="today-forecast-main"></Typography>
             </Grid>

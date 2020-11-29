@@ -34,7 +34,7 @@ const ProgressionScolaire = ({ className, ...rest }) => {
       <CardHeader title="Progression scolaire" />
       <Divider />
       <CardContent>
-        <Box height={256} position="relative">
+        <Box height={200} position="relative">
           <Line data={data} />
         </Box>
       </CardContent>
