@@ -25,7 +25,7 @@ Les consignes du projet se trouvent sur ce [lien](https://github.com/sandratng/P
 
 Nous avons réalisé les wireframes sur [Figma](https://www.figma.com/file/725LpZHa3Rcj8psK8YnlQs/Projet-Web?node-id=0%3A1).
 
-![Gif](frontend/src/figma.gif){:height="50%" width="50%"}
+![Gif](frontend/src/figma.gif)
 
 ## Outil de gestion de travail
 
