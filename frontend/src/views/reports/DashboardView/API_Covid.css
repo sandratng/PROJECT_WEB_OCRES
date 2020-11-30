@@ -6,12 +6,18 @@
   border-radius: 8px;
 }
 
-table,
-td {
-  border: 1px solid #333;
-}
+
 
 thead {
   background-color: #333;
   color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+center{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }

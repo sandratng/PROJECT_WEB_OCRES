@@ -1,7 +1,0 @@
-.button {
-    color: theme.palette.text.primary;
-    fontWeight: theme.typography.fontWeightMedium;
-    justifyContent: 'center';
-    padding: '10px 8px';
-    width: '15%';
-  };

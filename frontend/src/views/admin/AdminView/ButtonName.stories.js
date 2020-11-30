@@ -1,8 +1,8 @@
 import React from 'react'
-import ButtonName from './ButtonName.js'
+import NavItem from './ButtonName.js'
 
 export default {
-    title: 'Button Name ',
-    component: ButtonName 
+    title: 'NavItem ',
+    component: NavItem
 }
-export const Template = (args) => < ButtonName  />;
+export const Template = (args) => < NavItem />;

@@ -94,6 +94,7 @@ const Devise = ({ className, ...rest }) => {
             </Grid>
             <Grid item display="flex">
               <DeviseRow
+      
                 currencyOptions={currencyOptions}
                 selectedCurrency={toCurrency}
                 onChangeCurrency={e => setToCurrency(e.target.value)}
