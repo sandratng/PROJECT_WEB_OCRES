@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
-import './API_Covid.css';
-import { Box, Card, CardContent, CardHeader, Divider } from '@material-ui/core';
+import {
+  Box,
+  Card,
+  CardHeader,
+  Divider,
+  Typography,
+  Grid,
+  CardContent
+} from '@material-ui/core';
 
 class API_Covid extends Component {
   constructor() {
@@ -44,40 +51,72 @@ class API_Covid extends Component {
       <Card>
         <CardHeader title="Statistique mondiale Covid 19" />
         <Divider />
-        <CardContent>
-          <Box height={170} position="relative">
-            <div>
-              <center>
-                <h1>Dernière mise à jour: {this.state.valeur.lastUpdate}</h1>
-              </center>
-
-              <table className="container">
-                <thead>
-                  <tr>
-                    <th colspan="2">Statistique du jour</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Cas confirmés</td>
-                    <td>{this.state.valeur.confirmed}</td>
-                  </tr>
-                  <tr>
-                    <td>Cas critiques</td>
-                    <td>{this.state.valeur.critical}</td>
-                  </tr>
-                  <tr>
-                    <td>Nombre de morts</td>
-                    <td>{this.state.valeur.deaths}</td>
-                  </tr>
-                  <tr>
-                    <td>Nombre de rétablis</td>
-                    <td>{this.state.valeur.recovered}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <CardContent display="flex">
+        <Box height={150} position="relative">
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="center"
+            spacing={5}
+          >
+            <Grid item display="flex">
+              <Typography
+                gutterBottom
+                variant="h5"
+                style={{ color: '#7B4997' }}
+              >
+                Cas confirmés
+              </Typography>
+              <Typography gutterBottom variant="h6">
+                {this.state.valeur.confirmed}
+              </Typography>
+            </Grid>
+            <Grid item display="flex">
+              <Typography
+                gutterBottom
+                variant="h5"
+                style={{ color: '#7B4997' }}
+              >
+                Cas critiques
+              </Typography>
+              <Typography gutterBottom variant="h6">
+                {this.state.valeur.critical}
+              </Typography>
+            </Grid>
+            <Grid item display="flex">
+              <Typography
+                gutterBottom
+                variant="h5"
+                style={{ color: '#7B4997' }}
+              >
+                Nombre de décès
+              </Typography>
+              <Typography gutterBottom variant="h6">
+                {this.state.valeur.deaths}
+              </Typography>
+            </Grid>
+            <Grid item display="flex">
+              <Typography
+                gutterBottom
+                variant="h5"
+                style={{ color: '#7B4997' }}
+              >
+                Nombre de rétablissement
+              </Typography>
+              <Typography gutterBottom variant="h6">
+                {this.state.valeur.recovered}
+              </Typography>
+            </Grid>
+          </Grid>
+          <Box display="flex"
+        justifyContent="flex-end"
+        p={2}>
+          <Typography gutterBottom variant="h6">
+            Dernière mise à jour : {this.state.valeur.lastUpdate}
+          </Typography>
           </Box>
+        </Box>
         </CardContent>
       </Card>
     );
