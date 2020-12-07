@@ -5,8 +5,11 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+const { run } = require("./db");
 
 var app = express();
+
+run().catch(console.dir);
 
 app.use(logger("dev"));
 app.use(express.json());
