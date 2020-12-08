@@ -9,7 +9,7 @@ import {
   CardHeader,
   makeStyles,
   Grid,
-  Divider,
+  Divider
 } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
@@ -24,10 +24,11 @@ const AdminNotes = ({ className, ...rest }) => {
   const classes = useStyles();
 
   return (
-      <Card className={clsx(classes.root, className)} {...rest} display="flex">
-        <CardHeader title="Tu travailles bien ?" />
-        <Divider />
-        <CardContent display="flex">
+    <Card className={clsx(classes.root, className)} {...rest} display="flex">
+      <CardHeader title="Tu travailles bien ?" />
+      <Divider />
+      <CardContent display="flex">
+        <form>
           <Grid
             container
             display="flex"
@@ -37,19 +38,40 @@ const AdminNotes = ({ className, ...rest }) => {
           >
             <Grid item display="flex">
               <TextField
-              required
+                required
                 className={classes.textField}
-                id="filled-number"
+                id="numSemestre"
                 label="Numéro du semestre"
                 type="number"
                 InputLabelProps={{
                   shrink: true
                 }}
+                InputProps={{
+                  inputProps: {
+                    min: 1
+                  }
+                }}
               />
             </Grid>
-            
+
             <Grid item display="flex">
-            <TextField required id="moyenne" label="Moyenne" defaultValue=" " className={classes.textField}/>
+              <TextField
+                required
+                id="moyenne"
+                type="number"
+                label="Moyenne"
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true
+                }}
+                InputProps={{
+                  inputProps: {
+                    min: 0,
+                    max: 20,
+                    step: 0.01
+                  }
+                }}
+              />
             </Grid>
             <Grid item display="flex">
               <Box display="flex" justifyContent="flex-end" p={2}>
@@ -67,8 +89,9 @@ const AdminNotes = ({ className, ...rest }) => {
               </Box>
             </Grid>
           </Grid>
-        </CardContent>
-      </Card>
+        </form>
+      </CardContent>
+    </Card>
   );
 };
 
