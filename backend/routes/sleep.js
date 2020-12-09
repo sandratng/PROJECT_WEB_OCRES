@@ -17,6 +17,7 @@ router.get("/", async function (req, res, next) {
 
 /* POST sleep. */
 router.post("/", async function (req, res, next) {
+  console.log({body: req})
   try {
     const db = client.db("ecedashboard");
     const result = await db.collection("sleep").insertOne(req.body);
