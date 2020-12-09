@@ -32,6 +32,7 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
         <CardHeader title="Ajouter un utilisateur" />
         <Divider />
         <CardContent display="flex">
+        <form>
           <Grid
             container
             display="flex"
@@ -61,6 +62,7 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
               </Box>
             </Grid>
           </Grid>
+          </form>
         </CardContent>
       </Card>
   );

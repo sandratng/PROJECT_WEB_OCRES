@@ -42,6 +42,7 @@ const AdminBanque = ({ className, ...rest }) => {
         <CardHeader title="Ton argent" />
         <Divider />
         <CardContent display="flex">
+        <form>
           <Grid
             container
             display="flex"
@@ -110,6 +111,7 @@ const AdminBanque = ({ className, ...rest }) => {
               </Box>
             </Grid>
           </Grid>
+          </form>
         </CardContent>
       </Card>
   );

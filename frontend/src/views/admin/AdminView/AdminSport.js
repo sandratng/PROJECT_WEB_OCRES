@@ -31,6 +31,7 @@ const AdminSport = ({ className, ...rest }) => {
         <CardHeader title="Tu as fait du sport ?" />
         <Divider />
         <CardContent display="flex">
+        <form>
           <Grid
             container
             display="flex"
@@ -84,6 +85,7 @@ const AdminSport = ({ className, ...rest }) => {
               </Box>
             </Grid>
           </Grid>
+          </form>
         </CardContent>
       </Card>
 
