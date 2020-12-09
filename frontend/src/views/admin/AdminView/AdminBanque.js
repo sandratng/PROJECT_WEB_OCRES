@@ -10,10 +10,7 @@ import {
   makeStyles,
   Grid,
   Divider,
-  FormControl,
-  InputLabel,
-  Input,
-  InputAdornment
+  TextField
 } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
@@ -29,19 +26,11 @@ const useStyles = makeStyles(theme => ({
 const AdminBanque = ({ className, ...rest }) => {
   const classes = useStyles();
 
-  const [values, setValues] = React.useState({
-    amount: '',
-  });
-
-  const handleChange = prop => event => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
-
   return (
-      <Card className={clsx(classes.root, className)} {...rest} display="flex">
-        <CardHeader title="Ton argent" />
-        <Divider />
-        <CardContent display="flex">
+    <Card className={clsx(classes.root, className)} {...rest} display="flex">
+      <CardHeader title="Ton argent" />
+      <Divider />
+      <CardContent display="flex">
         <form>
           <Grid
             container
@@ -51,49 +40,57 @@ const AdminBanque = ({ className, ...rest }) => {
             spacing={5}
           >
             <Grid item display="flex">
-              <FormControl fullWidth className={classes.textField}>
-                <InputLabel>
-                  Dernier débit
-                </InputLabel>
-                <Input
-                  id="debit"
-                  value={values.amount}
-                  onChange={handleChange('amount')}
-                  startAdornment={
-                    <InputAdornment position="end">€</InputAdornment>
+            <TextField
+                required
+                id="debit"
+                type="number"
+                label="Débit (€)"
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true
+                }}
+                InputProps={{
+                  inputProps: {
+                    min: 0,
+                    step: 0.01
                   }
-                />
-              </FormControl>
+                }}
+              />
             </Grid>
             <Grid item display="flex">
-            <FormControl fullWidth className={classes.textField}>
-                <InputLabel>
-                  Dernier crédit
-                </InputLabel>
-                <Input
-                  id="credit"
-                  value={values.amount}
-                  onChange={handleChange('amount')}
-                  startAdornment={
-                    <InputAdornment position="end">€</InputAdornment>
+            <TextField
+                required
+                id="credit"
+                type="number"
+                label="Crédit (€)"
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true
+                }}
+                InputProps={{
+                  inputProps: {
+                    min: 0,
+                    step: 0.01
                   }
-                />
-              </FormControl>
+                }}
+              />
             </Grid>
             <Grid item display="flex">
-            <FormControl fullWidth className={classes.textField}>
-                <InputLabel>
-                  Solde
-                </InputLabel>
-                <Input
-                  id="solde"
-                  value={values.amount}
-                  onChange={handleChange('amount')}
-                  startAdornment={
-                    <InputAdornment position="end">€</InputAdornment>
+            <TextField
+                required
+                id="solde"
+                type="number"
+                label="Solde (€)"
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true
+                }}
+                InputProps={{
+                  inputProps: {
+                    step: 0.01
                   }
-                />
-              </FormControl>
+                }}
+              />
             </Grid>
             <Grid item display="flex">
               <Box display="flex" justifyContent="flex-end" p={2}>
@@ -111,9 +108,9 @@ const AdminBanque = ({ className, ...rest }) => {
               </Box>
             </Grid>
           </Grid>
-          </form>
-        </CardContent>
-      </Card>
+        </form>
+      </CardContent>
+    </Card>
   );
 };
 
