@@ -31,6 +31,7 @@ const SuppUtilisateur = ({ className, ...rest }) => {
         <CardHeader title="Supprimer un utilisateur" />
         <Divider />
         <CardContent display="flex">
+        <form>
           <Grid
             container
             display="flex"
@@ -60,6 +61,7 @@ const SuppUtilisateur = ({ className, ...rest }) => {
           </Box>
         </Grid>
       </Grid>
+      </form>
     </CardContent>
   </Card>
   );

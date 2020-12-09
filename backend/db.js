@@ -6,7 +6,9 @@ const uri =
   
 
 // Create a new MongoClient
-const client = new MongoClient(uri);
+const client = new MongoClient(uri, {
+  useUnifiedTopology: true
+});
 
 exports.run = async function run() {
   try {
@@ -17,9 +19,9 @@ exports.run = async function run() {
     await client.db("ecedashboard").command({ ping: 1 });
     console.log("Connected successfully to server");
     return client;
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+  } catch(e) {
+    console.error(e)
   }
 }
 
+exports.client = client

@@ -27,11 +27,11 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
   const classes = useStyles();
 
   return (
-
-      <Card className={clsx(classes.root, className)} {...rest} display="flex">
-        <CardHeader title="Ajouter un utilisateur" />
-        <Divider />
-        <CardContent display="flex">
+    <Card className={clsx(classes.root, className)} {...rest} display="flex">
+      <CardHeader title="Ajouter un utilisateur" />
+      <Divider />
+      <CardContent display="flex">
+        <form>
           <Grid
             container
             display="flex"
@@ -40,10 +40,22 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
             spacing={5}
           >
             <Grid item display="flex">
-            <TextField required id="Prenom" label="Prénom" defaultValue=" " className={classes.textField}/>
+              <TextField
+                required
+                id="Prenom"
+                label="Prénom"
+                defaultValue=" "
+                className={classes.textField}
+              />
             </Grid>
             <Grid item display="flex">
-            <TextField required id="Nom" label="Nom" defaultValue=" " className={classes.textField}/>
+              <TextField
+                required
+                id="Nom"
+                label="Nom"
+                defaultValue=" "
+                className={classes.textField}
+              />
             </Grid>
             <Grid item display="flex">
               <Box display="flex" justifyContent="flex-end" p={2}>
@@ -61,8 +73,9 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
               </Box>
             </Grid>
           </Grid>
-        </CardContent>
-      </Card>
+        </form>
+      </CardContent>
+    </Card>
   );
 };
 

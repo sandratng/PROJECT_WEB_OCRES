@@ -3,15 +3,26 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon app"
   },
   "dependencies": {
+<<<<<<< HEAD
     "-": "0.0.1",
+=======
+    "body-parser": "^1.19.0",
+>>>>>>> 3ed74e9020a6f53b30659829392d6689ea513593
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "mongodb": "^3.6.3",
+<<<<<<< HEAD
     "morgan": "~1.9.1",
     "save": "^2.4.0"
+=======
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+>>>>>>> 3ed74e9020a6f53b30659829392d6689ea513593
   }
 }
