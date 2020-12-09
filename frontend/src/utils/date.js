@@ -1,7 +1,7 @@
 import { format, add } from 'date-fns';
 
-export const formatDate = date => {
-    return format(date, 'yyyy-MM-dd');
+export const formatDate = (date, pattern = 'yyyy-MM-dd') => {
+    return format(date, pattern);
 };
 
 export const addHours = (date, hours) => {
@@ -19,6 +19,10 @@ export const addTime = (date, hours, minutes) => {
     newDate = addMinutes(newDate, minutes)
 
     return newDate
+}
+
+export const stringToMinutes = (time) => {
+    return getHoursFromTime(time) * 60 + getMinutesFromTime(time)
 }
 
 export const getHoursFromTime = (time) => {

@@ -12,7 +12,7 @@ import {
   Divider
 } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
-import { addTime, formatDate, getHoursFromTime, getMinutesFromTime } from 'src/utils/date';
+import { addTime, formatDate, getHoursFromTime, getMinutesFromTime, stringToMinutes } from 'src/utils/date';
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -27,17 +27,14 @@ const AdminSommeil = ({ className, ...rest }) => {
   const defaultDate = new Date()
 
   const [date, setDate] = useState(formatDate(defaultDate))
-  const [wakeUp, setWakeUp] = useState("05:00")
   const [sleep, setSleep] = useState("18:00")
 
   const onSubmit = async () => {
-    const currentDate = new Date(date)
-    const wakeUpTimestamp = addTime(currentDate, getHoursFromTime(wakeUp), getMinutesFromTime(wakeUp))
-    const sleepTimestamp = addTime(currentDate, getHoursFromTime(sleep), getMinutesFromTime(sleep))
+    const sleepAmount = stringToMinutes(sleep)
 
     const data = {
-      "wake_up_timestamp":  wakeUpTimestamp.getTime(),
-      "sleep_timestamp": sleepTimestamp.getTime()
+      "date": date,
+      "sleep_amount": sleepAmount
     }
 
     const res = await fetch('http://localhost:8000/sleep/', {
@@ -48,8 +45,6 @@ const AdminSommeil = ({ className, ...rest }) => {
         'Content-Type': 'application/json'
       }
     })
-
-    console.log({res})
   }
 
   return (
@@ -92,20 +87,6 @@ const AdminSommeil = ({ className, ...rest }) => {
                 type="time"
                 value={sleep}
                 onChange={e => setSleep(e.target.value)}
-                className={classes.textField}
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
-            </Grid>
-            <Grid item display="flex">
-              <TextField
-                required
-                id="time"
-                label="Heure de réveil"
-                type="time"
-                value={wakeUp}
-                onChange={e => setWakeUp(e.target.value)}
                 className={classes.textField}
                 InputLabelProps={{
                   shrink: true

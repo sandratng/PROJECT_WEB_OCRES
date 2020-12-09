@@ -15,6 +15,20 @@ router.get("/", async function (req, res, next) {
   }
 });
 
+/* GET sleep. */
+router.get("/days/:amount", async function (req, res, next) {
+  try {
+    const db = client.db("ecedashboard");
+    const limit = parseInt(req.params.amount)
+    const collections = await db.collection("sleep").find().sort({_id: -1}).limit(limit).toArray();
+
+    res.json(collections);
+  } catch (e) {
+    console.error(e);
+    res.json(e);
+  }
+});
+
 /* POST sleep. */
 router.post("/", async function (req, res, next) {
   console.log({body: req})

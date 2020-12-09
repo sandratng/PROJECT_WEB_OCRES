@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
@@ -14,6 +14,7 @@ import {
   colors
 } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { formatDate } from 'src/utils/date';
 
 const useStyles = makeStyles(() => ({
   root: {}
@@ -22,25 +23,58 @@ const useStyles = makeStyles(() => ({
 const Sommeil = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
+  const [data, setData] = useState({});
 
-  const data = {
-    datasets: [
-      {
-        backgroundColor: colors.indigo[500],
-        data: [7, 8, 8.4, 4, 7, 10, 9],
-        label: 'This week'
-      }
-    ],
-    labels: [
-      'Lundi',
-      'Mardi',
-      'Mercredi',
-      'Jeudi',
-      'Vendredi',
-      'Samedi',
-      'Dimanche'
-    ]
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedData = await fetch('http://localhost:8000/sleep/days/7', {
+        method: 'GET'
+      });
+
+      const jsonData = await fetchedData.json();
+      const sleepAmounts = jsonData.reduce(
+        (acc, amount) => [...acc, amount.sleep_amount],
+        []
+      );
+
+      const dates = jsonData.reduce((acc, amount) => {
+        const currentDate = new Date(amount.date);
+        return [...acc, formatDate(currentDate, 'dd/MM')];
+      }, []);
+
+      setData({
+        datasets: [
+          {
+            backgroundColor: colors.indigo[500],
+            data: sleepAmounts,
+            label: 'This week'
+          }
+        ],
+        labels: dates
+      });
+    };
+
+    fetchData();
+  }, []);
+
+  // const data = {
+  //   datasets: [
+  //     {
+  //       backgroundColor: colors.indigo[500],
+  //       data: [7, 8, 8.4, 4, 7, 10, 9],
+  //       label: 'This week'
+  //     }
+  //   ],
+  //   labels: [
+  //     'Lundi',
+  //     'Mardi',
+  //     'Mercredi',
+  //     'Jeudi',
+  //     'Vendredi',
+  //     'Samedi',
+  //     'Dimanche'
+  //   ]
+  // };
 
   const options = {
     animation: false,
