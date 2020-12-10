@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
@@ -12,6 +12,7 @@ import {
   Divider
 } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import { addTime, formatDate, getHoursFromTime, getMinutesFromTime, stringToMinutes } from 'src/utils/date';
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -23,12 +24,40 @@ const useStyles = makeStyles(theme => ({
 const AdminSommeil = ({ className, ...rest }) => {
   const classes = useStyles();
 
+  const defaultDate = new Date()
+
+  const [date, setDate] = useState(formatDate(defaultDate))
+  const [sleep, setSleep] = useState("18:00")
+
+  const onSubmit = async () => {
+    const sleepAmount = stringToMinutes(sleep)
+
+    const data = {
+      "date": date,
+      "sleep_amount": sleepAmount
+    }
+
+    const res = await fetch('http://localhost:8000/sleep/', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+  }
+
   return (
     <Card className={clsx(classes.root, className)} {...rest} display="flex">
       <CardHeader title="Tu as bien dormi ?" />
       <Divider />
       <CardContent display="flex">
-        <form>
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            onSubmit();
+          }}
+        >
           <Grid
             container
             display="flex"
@@ -42,8 +71,12 @@ const AdminSommeil = ({ className, ...rest }) => {
                 id="date"
                 label="Date"
                 type="date"
-                defaultValue="2020-11-30"
+                value={date}
+                onChange={e => setDate(e.target.value)}
                 className={classes.textField}
+                InputLabelProps={{
+                  shrink: true
+                }}
               />
             </Grid>
             <Grid item display="flex">
@@ -52,29 +85,11 @@ const AdminSommeil = ({ className, ...rest }) => {
                 id="time"
                 label="Heure de coucher"
                 type="time"
-                defaultValue="18:30"
+                value={sleep}
+                onChange={e => setSleep(e.target.value)}
                 className={classes.textField}
                 InputLabelProps={{
                   shrink: true
-                }}
-                inputProps={{
-                  step: 300 // 5 min
-                }}
-              />
-            </Grid>
-            <Grid item display="flex">
-              <TextField
-                required
-                id="time"
-                label="Heure de réveil"
-                type="time"
-                defaultValue="06:00"
-                className={classes.textField}
-                InputLabelProps={{
-                  shrink: true
-                }}
-                inputProps={{
-                  step: 300 // 5 min
                 }}
               />
             </Grid>
