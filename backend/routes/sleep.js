@@ -3,7 +3,7 @@ var router = express.Router();
 const { client } = require("../db");
 
 /* GET sleep. */
-router.get("/", async function (req, res, next) {
+router.get("/", async function (req, res) {
   try {
     const db = client.db("ecedashboard");
     const collections = await db.collection("sleep").find().toArray();
@@ -16,11 +16,11 @@ router.get("/", async function (req, res, next) {
 });
 
 /* GET sleep. */
-router.get("/days/:amount", async function (req, res, next) {
+router.get("/days/:amount", async function (req, res) {
   try {
     const db = client.db("ecedashboard");
     const limit = parseInt(req.params.amount)
-    const collections = await db.collection("sleep").find().sort({_id: -1}).limit(limit).toArray();
+    const collections = await db.collection("sleep").find().sort({date: -1}).limit(limit).toArray();
 
     res.json(collections);
   } catch (e) {
@@ -30,7 +30,7 @@ router.get("/days/:amount", async function (req, res, next) {
 });
 
 /* POST sleep. */
-router.post("/", async function (req, res, next) {
+router.post("/", async function (req, res) {
   console.log({body: req})
   try {
     const db = client.db("ecedashboard");

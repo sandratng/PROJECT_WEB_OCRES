@@ -12,7 +12,7 @@ import {
   Divider
 } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
-import { addTime, formatDate, getHoursFromTime, getMinutesFromTime, stringToMinutes } from 'src/utils/date';
+import { formatDate, stringToMinutes } from 'src/utils/date';
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -27,7 +27,7 @@ const AdminSommeil = ({ className, ...rest }) => {
   const defaultDate = new Date()
 
   const [date, setDate] = useState(formatDate(defaultDate))
-  const [sleep, setSleep] = useState("18:00")
+  const [sleep, setSleep] = useState("08:00")
 
   const onSubmit = async () => {
     const sleepAmount = stringToMinutes(sleep)
@@ -83,7 +83,7 @@ const AdminSommeil = ({ className, ...rest }) => {
               <TextField
                 required
                 id="time"
-                label="Heure de coucher"
+                label="Temps de sommeill"
                 type="time"
                 value={sleep}
                 onChange={e => setSleep(e.target.value)}
@@ -103,6 +103,7 @@ const AdminSommeil = ({ className, ...rest }) => {
                     backgroundColor: '#388A36',
                     color: 'white'
                   }}
+                  onClick={()=>{ alert('Temps de sommeil enregistré.'); }}
                 >
                   Valider
                 </Button>

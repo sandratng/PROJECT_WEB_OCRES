@@ -13,6 +13,8 @@ import {
 } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
+
+
 const useStyles = makeStyles(theme => ({
   root: {},
   buttonName: {
@@ -63,9 +65,6 @@ const AdminSport = ({ className, ...rest }) => {
                   InputLabelProps={{
                     shrink: true
                   }}
-                  inputProps={{
-                    step: 300 // 5 min
-                  }}
                 />
               </form>
             </Grid>
@@ -79,6 +78,7 @@ const AdminSport = ({ className, ...rest }) => {
                     backgroundColor: '#388A36',
                     color: 'white'
                   }}
+                  onClick={()=>{ alert('Temps de sport enregistré.'); }}
                 >
                   Valider
                 </Button>

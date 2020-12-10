@@ -83,6 +83,7 @@ const AdminNotes = ({ className, ...rest }) => {
                     backgroundColor: '#388A36',
                     color: 'white'
                   }}
+                  onClick={()=>{ alert('Progression scolaire mis à jour.'); }}
                 >
                   Valider
                 </Button>

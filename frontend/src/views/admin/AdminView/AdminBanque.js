@@ -102,6 +102,7 @@ const AdminBanque = ({ className, ...rest }) => {
                     backgroundColor: '#388A36',
                     color: 'white'
                   }}
+                  onClick={()=>{ alert('Solde bancaire mis à jour.'); }}
                 >
                   Valider
                 </Button>
