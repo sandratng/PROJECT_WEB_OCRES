@@ -112,10 +112,7 @@ const Sommeil = ({ className, ...rest }) => {
 
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
-      <CardHeader
-
-        title="Temps de sommeil"
-      />
+      <CardHeader title="Temps de sommeil" />
       <Divider />
       <CardContent>
         <Box height={252} position="relative">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import clsx from 'clsx';
 import {
@@ -16,18 +16,41 @@ const useStyles = makeStyles(() => ({
 
 const ProgressionScolaire = ({ className, ...rest }) => {
   const classes = useStyles();
+  const [data, setData] = useState({});
 
-  const data = {
-    labels: ["S1", "S2", "S3", "S4", "S5"],
-    datasets: [
-      {
-        data: [3, 16, 13, 12.1, 18],
-        label: 'Moyennes semestrielles',
-        borderColor: '#3e95cd',
-        fill: false
-      },
-    ]
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedData = await fetch('http://localhost:8000/grades', {
+        method: 'GET'
+      });
+
+      const jsonData = await fetchedData.json();
+      const grade = jsonData.reduce(
+        (acc, amount) => [...acc, amount.grade],
+        []
+      );
+
+      const semester = jsonData.reduce(
+        (acc, amount) => [...acc, amount.semester],
+        []
+      );
+
+      setData({
+        datasets: [
+          {
+            data: grade.reverse(),
+            label: 'Moyennes semestrielles',
+            borderColor: '#3e95cd',
+            fill: false
+          }
+        ],
+
+        labels: semester.reverse()
+      });
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
@@ -35,7 +58,25 @@ const ProgressionScolaire = ({ className, ...rest }) => {
       <Divider />
       <CardContent>
         <Box height={200} position="relative">
-          <Line data={data} />
+          <Line
+            data={data}
+            options={{
+              legend: {
+                display: false
+              },
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      max: 20,
+                      min: 0,
+                      stepSize: 4
+                    }
+                  }
+                ]
+              }
+            }}
+          />
         </Box>
       </CardContent>
     </Card>

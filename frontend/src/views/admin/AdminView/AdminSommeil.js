@@ -83,7 +83,7 @@ const AdminSommeil = ({ className, ...rest }) => {
               <TextField
                 required
                 id="time"
-                label="Temps de sommeill"
+                label="Temps de sommeil"
                 type="time"
                 value={sleep}
                 onChange={e => setSleep(e.target.value)}
