@@ -3,10 +3,10 @@ var router = express.Router();
 const { client } = require("../db");
 
 /* GET grades. */
-router.get("/", async function (req, res, next) {
+router.get("/", async function (req, res) {
   try {
     const db = client.db("ecedashboard");
-    const collections = await db.collection("grades").find().toArray();
+    const collections = await db.collection("grades").find().sort({semester: -1}).toArray();
 
     res.json(collections);
   } catch (e) {
@@ -16,7 +16,7 @@ router.get("/", async function (req, res, next) {
 });
 
 /* POST grades. */
-router.post("/", async function (req, res, next) {
+router.post("/", async function (req, res) {
   try {
     const db = client.db("ecedashboard");
     const result = await db.collection("grades").insertOne(req.body);

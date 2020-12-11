@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
@@ -23,12 +23,34 @@ const useStyles = makeStyles(theme => ({
 const AdminNotes = ({ className, ...rest }) => {
   const classes = useStyles();
 
+  const [semester, setSemester] = useState('1');
+  const [grade, setGrade] = useState('10');
+
+  const onSubmit = async () => {
+    const data = {
+      "semester": semester,
+      "grade": grade
+    };
+
+    const res = await fetch('http://localhost:8000/grades/', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+    });
+  };
+
   return (
     <Card className={clsx(classes.root, className)} {...rest} display="flex">
       <CardHeader title="Tu travailles bien ?" />
       <Divider />
       <CardContent display="flex">
-        <form>
+        <form onSubmit={e => {
+            e.preventDefault();
+            onSubmit();
+          }}>
           <Grid
             container
             display="flex"
@@ -43,6 +65,8 @@ const AdminNotes = ({ className, ...rest }) => {
                 id="numSemestre"
                 label="Numéro du semestre"
                 type="number"
+                value={semester}
+                onChange={e => setSemester(e.target.value)}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -61,6 +85,8 @@ const AdminNotes = ({ className, ...rest }) => {
                 type="number"
                 label="Moyenne"
                 className={classes.textField}
+                value={grade}
+                onChange={e => setGrade(e.target.value)}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -82,6 +108,9 @@ const AdminNotes = ({ className, ...rest }) => {
                   style={{
                     backgroundColor: '#388A36',
                     color: 'white'
+                  }}
+                  onClick={() => {
+                    alert('Progression scolaire mis à jour.');
                   }}
                 >
                   Valider

@@ -3,10 +3,11 @@ var router = express.Router();
 const { client } = require("../db");
 
 /* GET sport. */
-router.get("/", async function (req, res, next) {
+router.get("/days/:amount", async function (req, res) {
   try {
     const db = client.db("ecedashboard");
-    const collections = await db.collection("sport").find().toArray();
+    const limit = parseInt(req.params.amount)
+    const collections = await db.collection("sport").find().sort({date: -1}).limit(limit).toArray();
 
     res.json(collections);
   } catch (e) {
@@ -16,7 +17,7 @@ router.get("/", async function (req, res, next) {
 });
 
 /* POST sport. */
-router.post("/", async function (req, res, next) {
+router.post("/", async function (req, res) {
   try {
     const db = client.db("ecedashboard");
     const result = await db.collection("sport").insertOne(req.body);

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
 import {
   Box,
-  Button,
   Card,
   CardContent,
   CardHeader,
@@ -13,7 +12,6 @@ import {
   makeStyles,
   colors
 } from '@material-ui/core';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { formatDate } from 'src/utils/date';
 
 const useStyles = makeStyles(() => ({
@@ -46,35 +44,16 @@ const Sommeil = ({ className, ...rest }) => {
         datasets: [
           {
             backgroundColor: colors.indigo[500],
-            data: sleepAmounts,
+            data: sleepAmounts.reverse(),
             label: 'This week'
           }
         ],
-        labels: dates
+        labels: dates.reverse()
       });
     };
 
     fetchData();
   }, []);
-
-  // const data = {
-  //   datasets: [
-  //     {
-  //       backgroundColor: colors.indigo[500],
-  //       data: [7, 8, 8.4, 4, 7, 10, 9],
-  //       label: 'This week'
-  //     }
-  //   ],
-  //   labels: [
-  //     'Lundi',
-  //     'Mardi',
-  //     'Mercredi',
-  //     'Jeudi',
-  //     'Vendredi',
-  //     'Samedi',
-  //     'Dimanche'
-  //   ]
-  // };
 
   const options = {
     animation: false,
@@ -133,14 +112,7 @@ const Sommeil = ({ className, ...rest }) => {
 
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
-      <CardHeader
-        action={
-          <Button endIcon={<ArrowDropDownIcon />} size="small" variant="text">
-            7 derniers jours
-          </Button>
-        }
-        title="Temps de sommeil"
-      />
+      <CardHeader title="Temps de sommeil" />
       <Divider />
       <CardContent>
         <Box height={252} position="relative">

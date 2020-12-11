@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
 import {
   Box,
-  Button,
   Card,
   CardContent,
   CardHeader,
@@ -13,7 +12,7 @@ import {
   makeStyles,
   colors
 } from '@material-ui/core';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { formatDate } from 'src/utils/date';
 
 const useStyles = makeStyles(() => ({
   root: {}
@@ -22,25 +21,39 @@ const useStyles = makeStyles(() => ({
 const Sport = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
+  const [data, setData] = useState({});
 
-  const data = {
-    datasets: [
-      {
-        backgroundColor: colors.indigo[500],
-        data: [7, 8, 8.4, 4, 7, 10, 9],
-        label: 'This week'
-      }
-    ],
-    labels: [
-      'Lundi',
-      'Mardi',
-      'Mercredi',
-      'Jeudi',
-      'Vendredi',
-      'Samedi',
-      'Dimanche'
-    ]
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedData = await fetch('http://localhost:8000/sport/days/7', {
+        method: 'GET'
+      });
+
+      const jsonData = await fetchedData.json();
+      const sportAmounts = jsonData.reduce(
+        (acc, amount) => [...acc, amount.sport_amount],
+        []
+      );
+
+      const dates = jsonData.reduce((acc, amount) => {
+        const currentDate = new Date(amount.date);
+        return [...acc, formatDate(currentDate, 'dd/MM')];
+      }, []);
+
+      setData({
+        datasets: [
+          {
+            backgroundColor: colors.indigo[500],
+            data: sportAmounts.reverse(),
+            label: 'This week'
+          }
+        ],
+        labels: dates.reverse()
+      });
+    };
+
+    fetchData();
+  }, []);
 
   const options = {
     animation: false,
@@ -99,14 +112,7 @@ const Sport = ({ className, ...rest }) => {
 
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
-      <CardHeader
-        action={
-          <Button endIcon={<ArrowDropDownIcon />} size="small" variant="text">
-            7 derniers jours
-          </Button>
-        }
-        title="Temps de Sport"
-      />
+      <CardHeader title="Temps de Sport" />
       <Divider />
       <CardContent>
         <Box height={200} position="relative">
