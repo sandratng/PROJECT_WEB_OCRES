@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const NavItem = ({ className, href, title, ...rest }) => {
+const NavItem = ({ className, href, title, nom, age, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -33,6 +33,7 @@ const NavItem = ({ className, href, title, ...rest }) => {
         className={classes.button}
         component={RouterLink}
         to={href}
+        onClick={()=>alert("bonjour grace ici")}
       >
         <span className={classes.title}>{title}</span>
       </Button>

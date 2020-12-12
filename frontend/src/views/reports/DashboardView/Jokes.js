@@ -46,7 +46,7 @@ const Jokes = ({ className, ...rest }) => {
             spacing={1}
           >
           <Grid item display="flex"><Button onClick={getJoke} >Clique pour une blague drôle</Button></Grid>
-          <Grid item display="flex"><Typography color="purple">{joke}</Typography></Grid>
+          <Grid item display="flex"><Typography>{joke}</Typography></Grid>
           </Grid>
         </Box>
       </CardContent>

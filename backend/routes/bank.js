@@ -18,6 +18,7 @@ router.get("/", async function (req, res, next) {
 /* POST bank. */
 router.post("/", async function (req, res, next) {
   try {
+
     const db = client.db("ecedashboard");
     const result = await db.collection("bank").insertOne(req.body);
 

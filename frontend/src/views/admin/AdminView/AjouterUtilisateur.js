@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
@@ -25,13 +25,38 @@ const useStyles = makeStyles(theme => ({
 
 const AjouterUtilisateur = ({ className, ...rest }) => {
   const classes = useStyles();
+  const [prenom, setPrenom] = useState();
+  const [nom, setNom] = useState();
+  const [age, setAge]= useState();
+
+  const onSubmit = async () => {
+
+    const data = {
+      nom: nom,
+      prenom: prenom,
+      age: age
+    };
+    const res = await fetch('http://localhost:8000/users/', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+    });
+  };
 
   return (
     <Card className={clsx(classes.root, className)} {...rest} display="flex">
       <CardHeader title="Ajouter un utilisateur" />
       <Divider />
       <CardContent display="flex">
-        <form>
+      <form
+          onSubmit={e => {
+            e.preventDefault();
+            onSubmit();
+          }}
+          >
           <Grid
             container
             display="flex"
@@ -44,7 +69,8 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
                 required
                 id="Prenom"
                 label="Prénom"
-                defaultValue=" "
+                value={prenom}
+                onChange={e => setPrenom(e.target.value)}
                 className={classes.textField}
               />
             </Grid>
@@ -53,7 +79,18 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
                 required
                 id="Nom"
                 label="Nom"
-                defaultValue=" "
+                value={nom}
+                onChange={e => setNom(e.target.value)}
+                className={classes.textField}
+              />
+            </Grid>
+            <Grid item display="flex">
+              <TextField
+                required
+                id="Age"
+                label="Age"
+                value={age}
+                onChange={e => setAge(e.target.value)}
                 className={classes.textField}
               />
             </Grid>
@@ -72,6 +109,7 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
                 </Button>
               </Box>
             </Grid>
+            
           </Grid>
         </form>
       </CardContent>

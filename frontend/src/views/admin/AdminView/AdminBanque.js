@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
@@ -25,13 +25,37 @@ const useStyles = makeStyles(theme => ({
 
 const AdminBanque = ({ className, ...rest }) => {
   const classes = useStyles();
-
+    const defaultDate = new Date();
+  
+    const [debit, setDebit] = useState();
+    const [credit, setCredit] = useState();
+    const [solde, setSolde] = useState();
+    const onSubmit = async () => {
+  
+      const data = {
+        solde: solde,
+        debit: debit,
+        credit: credit
+      };
+  
+      const res = await fetch('http://localhost:8000/bank/', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        }
+      });
+    };
   return (
     <Card className={clsx(classes.root, className)} {...rest} display="flex">
       <CardHeader title="Ton argent" />
       <Divider />
       <CardContent display="flex">
-        <form>
+        <form onSubmit={e => {
+            e.preventDefault();
+            onSubmit();
+          }}>
           <Grid
             container
             display="flex"
@@ -46,6 +70,8 @@ const AdminBanque = ({ className, ...rest }) => {
                 type="number"
                 label="Débit (€)"
                 className={classes.textField}
+              
+                onChange={e => setDebit(e.target.value)}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -64,6 +90,7 @@ const AdminBanque = ({ className, ...rest }) => {
                 type="number"
                 label="Crédit (€)"
                 className={classes.textField}
+                onChange={e => setCredit(e.target.value)}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -82,6 +109,7 @@ const AdminBanque = ({ className, ...rest }) => {
                 type="number"
                 label="Solde (€)"
                 className={classes.textField}
+                onChange={e => setSolde(e.target.value)}
                 InputLabelProps={{
                   shrink: true
                 }}

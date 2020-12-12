@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { Container, makeStyles, Grid, GridList } from '@material-ui/core';
 import Page from 'src/components/Page';
 import AdminSommeil from './AdminSommeil';
@@ -18,21 +18,73 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+let users =[];
+//var buttonName;
+
 const AdminView = () => {
   const classes = useStyles();
+  const [buttonName, setData] = useState([]);
 
-  const buttonName = [
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedData = await fetch('http://localhost:8000/users', {
+        method: 'GET'
+      });
+
+      const jsonData = await fetchedData.json();        
+      for(var i=0;i<jsonData.length;i++){
+        
+        users.push({
+          
+          id: jsonData[i]._id,
+          nom: jsonData[i].nom,
+          prenom: jsonData[i].prenom,
+          age: jsonData[i].age
+        });
+      }
+      for(var u=0;u<users.length;u++){
+        setData ([...buttonName,{href: '/app/dashboard',title: users[i].prenom, nom: users[i].nom,
+        age: users[i].age}])}
+    };
+
+    fetchData();
+
+  }, []);
+
+ 
+/*
+  for(var i=0;i<users.length;i++){
+
+  buttonName.push(
     {
       href: '/app/dashboard',
-      title: 'Elena'
-    },
-    {
-      href: '/app/admin',
-      title: 'Paul'
+      title: users[i].prenom,
+      nom: users[i].nom,
+      age: users[i].age,
     }
-  ];
+  );
+*/
+/*
+for(var i=0;i<users.length;i++){
+
+
+    buttonName.push(
+      {
+        href: '/app/dashboard',
+        title: users[i].prenom,
+        nom: users[i].nom,
+        age: users[i].age,
+      }
+    );
+}
+*/
+
+
+
+
 
   return (
+
     <Page className={classes.root} title="ECE Dashboard - Admin">
       <Container maxWidth={false}>
         <GridList cellHeight={60} className={classes.gridList} cols={10}>
