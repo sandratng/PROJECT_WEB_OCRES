@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import { Container, makeStyles, Grid, GridList } from '@material-ui/core';
+import { Container, makeStyles, Grid, GridList, TextField } from '@material-ui/core';
 import Page from 'src/components/Page';
 import AdminSommeil from './AdminSommeil';
 import AdminSport from './AdminSport';
@@ -31,7 +31,22 @@ const AdminView = () => {
         method: 'GET'
       });
 
-      const jsonData = await fetchedData.json();        
+      const jsonData = await fetchedData.json();    
+
+      const buttonName = jsonData.reduce(
+        (acc, amount) => [...acc, amount.nom],
+        []
+      );
+
+
+      setData(
+        
+         {
+        href:'/app/dashboard',
+        nom: buttonName
+      }); 
+    };
+      /*   
       for(var i=0;i<jsonData.length;i++){
         
         users.push({
@@ -45,7 +60,8 @@ const AdminView = () => {
       for(var u=0;u<users.length;u++){
         setData ([...buttonName,{href: '/app/dashboard',title: users[i].prenom, nom: users[i].nom,
         age: users[i].age}])}
-    };
+    };*/
+  
 
     fetchData();
 
@@ -88,8 +104,9 @@ for(var i=0;i<users.length;i++){
     <Page className={classes.root} title="ECE Dashboard - Admin">
       <Container maxWidth={false}>
         <GridList cellHeight={60} className={classes.gridList} cols={10}>
+          <TextField value={ButtonName.name}/>
           {buttonName.map(buttonName => (
-            <ButtonName href={buttonName.href} title={buttonName.title} />
+            <ButtonName href={buttonName.href} title={buttonName.nom} />
           ))}
         </GridList>
         <Grid container spacing={3}>

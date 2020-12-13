@@ -33,7 +33,6 @@ const NavItem = ({ className, href, title, nom, age, ...rest }) => {
         className={classes.button}
         component={RouterLink}
         to={href}
-        onClick={()=>alert("bonjour grace ici")}
       >
         <span className={classes.title}>{title}</span>
       </Button>
@@ -44,7 +43,10 @@ const NavItem = ({ className, href, title, nom, age, ...rest }) => {
 NavItem.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  nom: PropTypes.string,
+  age:PropTypes.string
+
 };
 
 export default NavItem;
