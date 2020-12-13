@@ -32,7 +32,7 @@ run()
     app.use("/grades", gradesRouter);
     app.use("/sleep", sleepRouter);
     app.use("/sport", sportRouter);
-    app.use("/todolist", todolistRouter);
+    app.use("/todotlist", todolistRouter);
     app.use("/bank", bankRouter);
     app.listen(port, () => {
       console.log(`App listening at http://localhost:${port}`);

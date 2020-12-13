@@ -96,8 +96,9 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       <Divider />
       <Box p={2}>
         <List>
-          {items.map((item) => (
+          {items.map((item,i) => (
             <NavItem
+            key={i}
               href={item.href}
               title={item.title}
               icon={item.icon}

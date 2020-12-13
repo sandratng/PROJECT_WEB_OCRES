@@ -67,7 +67,7 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
             <Grid item display="flex">
               <TextField
                 required
-                id="Prenom"
+                id="addPrenom"
                 label="Prénom"
                 value={prenom}
                 onChange={e => setPrenom(e.target.value)}
@@ -77,7 +77,7 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
             <Grid item display="flex">
               <TextField
                 required
-                id="Nom"
+                id="addNom"
                 label="Nom"
                 value={nom}
                 onChange={e => setNom(e.target.value)}
@@ -87,7 +87,7 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
             <Grid item display="flex">
               <TextField
                 required
-                id="Age"
+                id="addAge"
                 label="Age"
                 value={age}
                 onChange={e => setAge(e.target.value)}

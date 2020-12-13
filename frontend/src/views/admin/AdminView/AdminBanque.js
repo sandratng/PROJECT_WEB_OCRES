@@ -33,9 +33,10 @@ const AdminBanque = ({ className, ...rest }) => {
     const onSubmit = async () => {
   
       const data = {
-        solde: solde,
-        debit: debit,
-        credit: credit
+
+        solde: parseFloat(solde),
+        debit: parseFloat(debit),
+        credit: parseFloat(credit)
       };
   
       const res = await fetch('http://localhost:8000/bank/', {

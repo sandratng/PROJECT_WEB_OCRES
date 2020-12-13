@@ -24,24 +24,25 @@ const useStyles = makeStyles(() => ({
 const ToDoList = ({ className, ...rest }) => {
   const classes = useStyles();
 
-  const [tache, setTache] = useState({});
+  const [tachelist, setTache] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const fetchedData = await fetch('http://localhost:8000/todolist', {
+      const fetchedData = await fetch('http://localhost:8000/todotlist/todo/4', {
         method: 'GET'
       });
 
       const jsonData = await fetchedData.json();
+
       const taches = jsonData.reduce(
         (acc, amount) => [...acc, amount.tache],
         []
       );
 
-
-      setTache({
-        tache: taches
-      });
+        console.log({taches});
+      setTache(
+        taches
+      );
     };
 
     fetchData();
@@ -62,29 +63,22 @@ const ToDoList = ({ className, ...rest }) => {
        
 
         <NewItem/>
-      
-        <ListItem >
+        {tachelist.map(item=>
+        (
+          <ListItem >
           <ListItemIcon>
             <Checkbox/>
               </ListItemIcon>
                 <TextField 
-                value={tache}
+                value={item}
                 
                 />
 
         </ListItem>
-        <ListItem >
-          <ListItemIcon>
-            <Checkbox/>
-              </ListItemIcon>
-                <TextField/>
-        </ListItem>
-        <ListItem >
-          <ListItemIcon>
-            <Checkbox/>
-              </ListItemIcon>
-                <TextField/>
-        </ListItem>
+        )
+        
+        )}
+        
        
       </CardContent>
     </Card>

@@ -30,8 +30,9 @@ const AdminView = () => {
       const fetchedData = await fetch('http://localhost:8000/users', {
         method: 'GET'
       });
-
-      const jsonData = await fetchedData.json();    
+      console.log("AHHHHH");
+      const jsonData = await fetchedData.json();  
+      console.log({jsonData});  
 /*
       const buttonName = jsonData.reduce(
         (acc, amount) => [...acc, amount.nom],

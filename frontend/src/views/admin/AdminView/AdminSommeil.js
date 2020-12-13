@@ -68,7 +68,7 @@ const AdminSommeil = ({ className, ...rest }) => {
             <Grid item display="flex">
               <TextField
                 required
-                id="date"
+                id="sommeildate"
                 label="Date"
                 type="date"
                 value={date}
@@ -82,7 +82,7 @@ const AdminSommeil = ({ className, ...rest }) => {
             <Grid item display="flex">
               <TextField
                 required
-                id="time"
+                id="sommeilTime"
                 label="Temps de sommeil"
                 type="time"
                 value={sleep}

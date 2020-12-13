@@ -71,7 +71,7 @@ const AdminSport = ({ className, ...rest }) => {
             <Grid item display="flex">
               <TextField
                 required
-                id="date"
+                id="sportDate"
                 label="Date"
                 type="date"
                 value={date}
@@ -85,7 +85,7 @@ const AdminSport = ({ className, ...rest }) => {
             <Grid item display="flex">
               <TextField
                 required
-                id="time"
+                id="sportTime"
                 label="Temps"
                 type="time"
                 value={sport}
