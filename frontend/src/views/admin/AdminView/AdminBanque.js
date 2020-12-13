@@ -30,6 +30,9 @@ const AdminBanque = ({ className, ...rest }) => {
     const [debit, setDebit] = useState();
     const [credit, setCredit] = useState();
     const [solde, setSolde] = useState();
+    const refreshPage = async()=>{
+      window.location.reload(false);
+    }
     const onSubmit = async () => {
   
       const data = {
@@ -47,6 +50,7 @@ const AdminBanque = ({ className, ...rest }) => {
           'Content-Type': 'application/json'
         }
       });
+      refreshPage();
     };
   return (
     <Card className={clsx(classes.root, className)} {...rest} display="flex">

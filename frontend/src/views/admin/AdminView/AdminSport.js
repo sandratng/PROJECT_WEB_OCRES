@@ -32,6 +32,10 @@ const AdminSport = ({ className, ...rest }) => {
   const [date, setDate] = useState(formatDate(defaultDate));
   const [sport, setSport] = useState('01:00');
 
+  const refreshPage = async()=>{
+    window.location.reload(false);
+  }
+
   const onSubmit = async () => {
     const sportAmount = stringToMinutes(sport);
 
@@ -48,6 +52,7 @@ const AdminSport = ({ className, ...rest }) => {
         'Content-Type': 'application/json'
       }
     });
+    refreshPage();
   };
 
   return (

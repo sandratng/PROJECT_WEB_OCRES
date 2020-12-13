@@ -28,7 +28,9 @@ const AdminSommeil = ({ className, ...rest }) => {
 
   const [date, setDate] = useState(formatDate(defaultDate))
   const [sleep, setSleep] = useState("08:00")
-
+  const refreshPage = async()=>{
+    window.location.reload(false);
+  }
   const onSubmit = async () => {
     const sleepAmount = stringToMinutes(sleep)
 
@@ -45,7 +47,9 @@ const AdminSommeil = ({ className, ...rest }) => {
         'Content-Type': 'application/json'
       }
     })
+    refreshPage();
   }
+
 
   return (
     <Card className={clsx(classes.root, className)} {...rest} display="flex">

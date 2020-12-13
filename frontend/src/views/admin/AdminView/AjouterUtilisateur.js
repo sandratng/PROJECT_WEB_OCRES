@@ -28,7 +28,9 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
   const [prenom, setPrenom] = useState();
   const [nom, setNom] = useState();
   const [age, setAge]= useState();
-
+  const refreshPage = async()=>{
+    window.location.reload(false);
+  }
   const onSubmit = async () => {
 
     const data = {
@@ -44,6 +46,7 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
         'Content-Type': 'application/json'
       }
     });
+    refreshPage();
   };
 
   return (

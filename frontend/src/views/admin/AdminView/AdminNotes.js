@@ -19,7 +19,9 @@ const useStyles = makeStyles(theme => ({
     width: '22ch'
   }
 }));
-
+const refreshPage = async()=>{
+  window.location.reload(false);
+}
 const AdminNotes = ({ className, ...rest }) => {
   const classes = useStyles();
 
@@ -40,6 +42,7 @@ const AdminNotes = ({ className, ...rest }) => {
         'Content-Type': 'application/json'
       }
     });
+    refreshPage();
   };
 
   return (

@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import { Refresh } from "@material-ui/icons";
 
 const ref = createRef();
 
@@ -52,7 +53,9 @@ export default function NewItem({ onEnter = () => {}, onChange = () => {} }) {
       }
     });
   };
-
+  const refreshPage = async()=>{
+    window.location.reload(false);
+  }
   return (
     <List>
       <form
@@ -71,26 +74,6 @@ export default function NewItem({ onEnter = () => {}, onChange = () => {} }) {
                 type="string"
                 value={tache}
                 onChange={e => setTache(e.target.value)}
-                
-          /*
-          ref={ref}
-          value={value}
-          onChange={handleChange}
-          onKeyPress={handleKeyPress}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton
-                  title="Clique pour ajouter"
-                  disabled={!value.trim()}
-                  onClick={handleAddItem}
-                  
-                >
-                  <AddCircleIcon />
-                </IconButton>
-              </InputAdornment>
-            )
-          }}*/
 
         />
           <Button
@@ -103,7 +86,10 @@ export default function NewItem({ onEnter = () => {}, onChange = () => {} }) {
                   }}
                   onClick={() => {
                     alert('tache ajoutee');
-                  }}
+                    refreshPage(); 
+                  }
+                  
+                }
                 >
                   Valider
          </Button>
