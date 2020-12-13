@@ -11,6 +11,7 @@ import {
   ListItem,
   TextField,
   ListItemIcon,
+  Typography
 } from '@material-ui/core';
 import NewItem from "./NewItem";
 
@@ -39,10 +40,17 @@ const ToDoList = ({ className, ...rest }) => {
         []
       );
 
+      const idTaches = jsonData.reduce(
+        (acc,amount) => [...acc, amount._id],
+        []
+      );
+
         console.log({taches});
-        console.log()
+        console.log({idTaches});
+        
       setTache(
-        taches
+        taches,
+        idTaches
       );
     };
 
@@ -51,28 +59,17 @@ const ToDoList = ({ className, ...rest }) => {
   }, []);
 
   const [tache2, setTache2] = useState();
-
-  const recupId = async()=>{
-
-
-  }
-
   const onChange = async () => {
-    const data = {
-      tache: tache2,
-      
-    };
+   // fetchData();
+    var recherche;
+    console.log(tachelist.idTaches);
 
-    const res = await fetch('http://localhost:8000/todotlist/', {
+
+    const res = await fetch('http://localhost:8000/todotlist/:id', {
       method: 'DELETE'
       
     });
   };
-
-
-
-
-
 
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
@@ -81,16 +78,19 @@ const ToDoList = ({ className, ...rest }) => {
       <CardContent>      
         <NewItem/>
 
-        {tachelist.map(item=>
+        {tachelist.map((item,idTaches)=>
         (
-          <ListItem >
-          <ListItemIcon>
-            <Checkbox/>
+          
+          <ListItem key={idTaches}>
+          <ListItemIcon >
+            <Checkbox />
               </ListItemIcon>
                 <TextField 
+              
                 value={item}
                 
                 />
+                
 
         </ListItem>
         )

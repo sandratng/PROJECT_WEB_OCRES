@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -18,7 +18,54 @@ const useStyles = makeStyles(() => ({
 
 const CompteBancaire = ({ className, ...rest }) => {
   const classes = useStyles();
+  const [credit, setCredit] = useState();
+  const [debit,setDebit] = useState();
+  const [solde,setSolde] = useState();
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedData = await fetch('http://localhost:8000/bank', {
+        method: 'GET'
+      });
+
+      const jsonData = await fetchedData.json();
+
+      const credits = jsonData.reduce(
+        (acc, amount) => [...acc, amount.credit],
+        []
+      );
+
+      const debits = jsonData.reduce(
+        (acc,amount) => [...acc, amount.debit],
+        []
+      );
+      const soldes = jsonData.reduce(
+        (acc,amount) => [...acc, amount.solde],
+        []
+      );
+
+        console.log({soldes});
+        console.log({credits});
+        console.log({debits});
+        const soldes2=soldes.reverse();
+        const debits2=debits.reverse();
+        const credits2=credits.reverse();
+        
+      setSolde(
+        soldes2[0]
+      );
+      setDebit(
+        debits2[0]
+      );
+      setCredit(
+        credits2[0]
+      );
+      
+    };
+
+
+    fetchData();
+  }, []);
   /*const data = [
     { titre: 'Dernier Débit', somme: '-10,99€' },
     { titre: 'Dernier Crédit', somme: '+52€' },
@@ -39,13 +86,14 @@ const CompteBancaire = ({ className, ...rest }) => {
             spacing={10}
           >
             <Grid item display="flex">
+              
               <Typography
                 color="Red"
                 gutterBottom
                 variant="h4"
                 style={{ color: 'red' }}
               >
-                -10,99€
+                -{debit} €
               </Typography>
               <Typography
                 color="Red"
@@ -63,7 +111,7 @@ const CompteBancaire = ({ className, ...rest }) => {
                 color="red"
                 style={{ color: 'green' }}
               >
-                +52,00€
+                +{credit} €
               </Typography>
               <Typography
                 gutterBottom
@@ -81,7 +129,7 @@ const CompteBancaire = ({ className, ...rest }) => {
                 color="red"
                 style={{ color: 'blue' }}
               >
-                +531,37€
+                +{solde} €
               </Typography>
               <Typography
                 gutterBottom
