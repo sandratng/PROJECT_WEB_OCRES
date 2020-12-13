@@ -40,13 +40,35 @@ const ToDoList = ({ className, ...rest }) => {
       );
 
         console.log({taches});
+        console.log()
       setTache(
         taches
       );
     };
 
+
     fetchData();
   }, []);
+
+  const [tache2, setTache2] = useState();
+
+  const recupId = async()=>{
+
+
+  }
+
+  const onChange = async () => {
+    const data = {
+      tache: tache2,
+      
+    };
+
+    const res = await fetch('http://localhost:8000/todotlist/', {
+      method: 'DELETE'
+      
+    });
+  };
+
 
 
 
@@ -54,15 +76,11 @@ const ToDoList = ({ className, ...rest }) => {
 
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
-      <CardHeader title="To Do List" />
-      
-        
+      <CardHeader title="To Do List" />   
       <Divider />
-
-      <CardContent>
-       
-
+      <CardContent>      
         <NewItem/>
+
         {tachelist.map(item=>
         (
           <ListItem >

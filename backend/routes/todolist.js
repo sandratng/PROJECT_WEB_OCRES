@@ -30,7 +30,7 @@ router.get("/todo/:amount", async function (req, res, next) {
   }
 });
 
-/* GET todotlist. */
+/* DELETE todotlist. */
 router.delete("/:id", async function (req, res, next) {
   try {
     const db = client.db("ecedashboard");

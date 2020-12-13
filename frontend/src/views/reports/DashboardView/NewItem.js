@@ -43,7 +43,7 @@ export default function NewItem({ onEnter = () => {}, onChange = () => {} }) {
       
     };
 
-    const res = await fetch('http://localhost:8000/todolist/', {
+    const res = await fetch('http://localhost:8000/todotlist', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

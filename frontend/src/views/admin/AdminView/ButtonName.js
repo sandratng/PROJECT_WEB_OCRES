@@ -45,7 +45,7 @@ NavItem.propTypes = {
   href: PropTypes.string,
   title: PropTypes.string,
   nom: PropTypes.string,
-  age:PropTypes.string
+  age: PropTypes.string
 
 };
 
