@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -24,20 +24,53 @@ const useStyles = makeStyles(() => ({
 const ToDoList = ({ className, ...rest }) => {
   const classes = useStyles();
 
+  const [tache, setTache] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedData = await fetch('http://localhost:8000/todolist', {
+        method: 'GET'
+      });
+
+      const jsonData = await fetchedData.json();
+      const taches = jsonData.reduce(
+        (acc, amount) => [...acc, amount.tache],
+        []
+      );
+
+
+      setTache({
+        tache: taches
+      });
+    };
+
+    fetchData();
+  }, []);
+
+
+
+
+
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
       <CardHeader title="To Do List" />
       
         
       <Divider />
+
       <CardContent>
+       
+
         <NewItem/>
       
         <ListItem >
           <ListItemIcon>
             <Checkbox/>
               </ListItemIcon>
-                <TextField/>
+                <TextField 
+                value={tache}
+                />
+
         </ListItem>
         <ListItem >
           <ListItemIcon>
@@ -51,6 +84,7 @@ const ToDoList = ({ className, ...rest }) => {
               </ListItemIcon>
                 <TextField/>
         </ListItem>
+       
       </CardContent>
     </Card>
   );
