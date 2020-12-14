@@ -44,6 +44,15 @@ const AdminNotes = ({ className, ...rest }) => {
     });
     refreshPage();
   };
+  const Supp = async () => {
+  
+    const res = await fetch('http://localhost:8000/grades/delete', {
+      method: 'DELETE'
+
+    });
+
+    refreshPage();
+  };
 
   return (
     <Card className={clsx(classes.root, className)} {...rest} display="flex">
@@ -117,6 +126,25 @@ const AdminNotes = ({ className, ...rest }) => {
                   }}
                 >
                   Valider
+                </Button>
+              </Box>
+            </Grid>
+            <Grid item display="flex">
+              <Box display="flex" justifyContent="flex-end" p={2}>
+              <Button
+                  size="small"
+                  variant="text"
+                  type="submit"
+                  style={{
+                    backgroundColor: 'red',
+                    color: 'white'
+                  }}
+                  onClick={()=>{ 
+                    alert('Notes supprimées');
+                    Supp();
+                 }}
+                >
+                  supprimer
                 </Button>
               </Box>
             </Grid>

@@ -52,6 +52,16 @@ const AdminBanque = ({ className, ...rest }) => {
       });
       refreshPage();
     };
+
+    const Supp = async () => {
+  
+      const res = await fetch('http://localhost:8000/bank/delete', {
+        method: 'DELETE'
+  
+      });
+
+      refreshPage();
+    };
   return (
     <Card className={clsx(classes.root, className)} {...rest} display="flex">
       <CardHeader title="Ton argent" />
@@ -141,8 +151,29 @@ const AdminBanque = ({ className, ...rest }) => {
                 </Button>
               </Box>
             </Grid>
+            <Grid item display="flex">
+              <Box display="flex" justifyContent="flex-end" p={2}>
+              <Button
+                  size="small"
+                  variant="text"
+                  type="submit"
+                  style={{
+                    backgroundColor: 'red',
+                    color: 'white'
+                  }}
+                  onClick={()=>{ 
+                    alert('informations bancaires supprimées');
+                    Supp();
+                 }}
+                >
+                  supprimer
+                </Button>
+              </Box>
+            </Grid>
+           
           </Grid>
         </form>
+
       </CardContent>
     </Card>
   );

@@ -72,7 +72,7 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
                 required
                 id="addPrenom"
                 label="Prénom"
-                value={prenom}
+                
                 onChange={e => setPrenom(e.target.value)}
                 className={classes.textField}
               />
@@ -82,7 +82,7 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
                 required
                 id="addNom"
                 label="Nom"
-                value={nom}
+                
                 onChange={e => setNom(e.target.value)}
                 className={classes.textField}
               />
@@ -92,7 +92,7 @@ const AjouterUtilisateur = ({ className, ...rest }) => {
                 required
                 id="addAge"
                 label="Age"
-                value={age}
+                
                 onChange={e => setAge(e.target.value)}
                 className={classes.textField}
               />

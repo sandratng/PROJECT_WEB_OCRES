@@ -28,5 +28,18 @@ router.post("/", async function (req, res) {
   }
 });
 
+/* DELETE grades. */
+router.delete("/delete", async function (req, res, next) {
+  try {
+    const db = client.db("ecedashboard");
+    const collections = await db.collection("grades").remove({});
+
+    res.json(collections);
+  } catch (e) {
+    console.error(e);
+    res.json(e);
+  }
+});
+
 
 module.exports = router;

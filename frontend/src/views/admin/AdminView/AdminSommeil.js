@@ -49,7 +49,15 @@ const AdminSommeil = ({ className, ...rest }) => {
     })
     refreshPage();
   }
+  const Supp = async () => {
+  
+    const res = await fetch('http://localhost:8000/sleep/delete', {
+      method: 'DELETE'
 
+    });
+
+    refreshPage();
+  };
 
   return (
     <Card className={clsx(classes.root, className)} {...rest} display="flex">
@@ -110,6 +118,25 @@ const AdminSommeil = ({ className, ...rest }) => {
                   onClick={()=>{ alert('Temps de sommeil enregistré.'); }}
                 >
                   Valider
+                </Button>
+              </Box>
+            </Grid>
+            <Grid item display="flex">
+              <Box display="flex" justifyContent="flex-end" p={2}>
+              <Button
+                  size="small"
+                  variant="text"
+                  type="submit"
+                  style={{
+                    backgroundColor: 'red',
+                    color: 'white'
+                  }}
+                  onClick={()=>{ 
+                    alert('temps de sommeil supprimé');
+                    Supp();
+                 }}
+                >
+                  supprimer
                 </Button>
               </Box>
             </Grid>

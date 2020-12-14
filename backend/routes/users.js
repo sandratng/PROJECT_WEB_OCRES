@@ -32,6 +32,19 @@ router.get("/", async function (req, res) {
     res.json(e);
   }
 });
+
+/* DELETE users. */
+router.delete("/:nom", async function (req, res, next) {
+  try {
+    const db = client.db("ecedashboard");
+    const collections = await db.collection("users").deleteOne({_id: new mongodb.ObjectID(req.params.nom)});
+
+    res.json(collections);
+  } catch (e) {
+    console.error(e);
+    res.json(e);
+  }
+});
 module.exports = router;
 
 
