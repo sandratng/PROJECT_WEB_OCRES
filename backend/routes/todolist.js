@@ -28,7 +28,7 @@ router.get("/todo/:amount", async function (req, res, next) {
     console.error(e);
     res.json(e);
   }
-});
+})
 
 /* DELETE todotlist. */
 router.delete("/:id", async function (req, res, next) {
