@@ -16,12 +16,23 @@ Les consignes du projet se trouvent sur ce [lien](https://github.com/sandratng/P
 
 ## Installation
 * Cloner le projet dans un répertoire puis:
+### Backend
+* Installer mongodb : ``npm install mongodb --save``
+* Installer : ``npm i nodemon --save-dev``
+* Installer : ``npm i body-parser --save``
+* Installer : ``npm install cors --save``
+* Installer les dépendances : ``npm install``
+* Démarrer le serveur : ``node app``
+
+### Frontend
 
 * Installer les dépendances : ``npm install``
 * Installer : ``npm install axios --save``
 * Installer : ``npm i styled-components``
+* Installer : ``npm i date-fns --save``
 * Démarrer le serveur : ``npm start``
 * Ouvrir dans votre navigateur : ``localhost::3000``
+
 
 ## Wireframes
 
