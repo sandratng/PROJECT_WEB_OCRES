@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "5fd4c79983c4ec66dd9bb164"
+  },
+  "nom": "gnenago",
+  "prenom": "grace",
+  "age": "20"
+},{
+  "_id": {
+    "$oid": "5fd55e7096fd9080dad4d876"
+  },
+  "nom": "anne",
+  "prenom": "oumar",
+  "age": "23"
+},{
+  "_id": {
+    "$oid": "5fd72652dd8b4636b28f410c"
+  },
+  "nom": "Tang",
+  "prenom": "Sandra",
+  "age": "21"
+}]

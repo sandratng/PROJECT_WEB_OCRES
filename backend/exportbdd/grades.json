@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "5fd261f0179c5633382b47be"
+  },
+  "semester": "1",
+  "grade": "10"
+},{
+  "_id": {
+    "$oid": "5fd2621b179c5633382b47bf"
+  },
+  "semester": "2",
+  "grade": "10.11"
+},{
+  "_id": {
+    "$oid": "5fd272161a91f6251cec7d84"
+  },
+  "semester": "3",
+  "grade": "14"
+},{
+  "_id": {
+    "$oid": "5fd27986e7498d49480cd75c"
+  },
+  "semester": "5",
+  "grade": "11.23"
+},{
+  "_id": {
+    "$oid": "5fd2798ee7498d49480cd75d"
+  },
+  "semester": "4",
+  "grade": "15.23"
+},{
+  "_id": {
+    "$oid": "5fd6b8f8cf8bf42ec404ccfd"
+  },
+  "semester": "6",
+  "grade": "12"
+}]

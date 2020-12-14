@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "5fd7154dcd961534ac855a0e"
+  },
+  "date": "2020-12-14",
+  "sport_amount": 60
+},{
+  "_id": {
+    "$oid": "5fd7156fcd961534ac855a0f"
+  },
+  "date": "2020-12-13",
+  "sport_amount": 180
+},{
+  "_id": {
+    "$oid": "5fd71580cd961534ac855a10"
+  },
+  "date": "2020-12-12",
+  "sport_amount": 150
+},{
+  "_id": {
+    "$oid": "5fd7158ecd961534ac855a11"
+  },
+  "date": "2020-12-11",
+  "sport_amount": 240
+},{
+  "_id": {
+    "$oid": "5fd71598cd961534ac855a12"
+  },
+  "date": "2020-12-10",
+  "sport_amount": 0
+},{
+  "_id": {
+    "$oid": "5fd715a1cd961534ac855a13"
+  },
+  "date": "2020-12-09",
+  "sport_amount": 60
+},{
+  "_id": {
+    "$oid": "5fd715bdcd961534ac855a14"
+  },
+  "date": "2020-12-08",
+  "sport_amount": 120
+},{
+  "_id": {
+    "$oid": "5fd715cfcd961534ac855a15"
+  },
+  "date": "2020-12-07",
+  "sport_amount": 0
+}]

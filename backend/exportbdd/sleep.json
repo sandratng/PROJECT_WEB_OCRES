@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "5fd1f2cec7a53b2b6cceee87"
+  },
+  "date": "2020-12-05",
+  "sleep_amount": 480
+},{
+  "_id": {
+    "$oid": "5fd1f2dac7a53b2b6cceee88"
+  },
+  "date": "2020-12-06",
+  "sleep_amount": 515
+},{
+  "_id": {
+    "$oid": "5fd1f2e3c7a53b2b6cceee89"
+  },
+  "date": "2020-12-07",
+  "sleep_amount": 600
+},{
+  "_id": {
+    "$oid": "5fd1f2eec7a53b2b6cceee8a"
+  },
+  "date": "2020-12-08",
+  "sleep_amount": 423
+},{
+  "_id": {
+    "$oid": "5fd1f2fac7a53b2b6cceee8b"
+  },
+  "date": "2020-12-09",
+  "sleep_amount": 480
+},{
+  "_id": {
+    "$oid": "5fd1f3159711f3362c398ab9"
+  },
+  "date": "2020-12-10",
+  "sleep_amount": 540
+},{
+  "_id": {
+    "$oid": "5fd1f3289711f3362c398aba"
+  },
+  "date": "2020-12-11",
+  "sleep_amount": 415
+},{
+  "_id": {
+    "$oid": "5fd1f3339711f3362c398abb"
+  },
+  "date": "2020-12-12",
+  "sleep_amount": 540
+},{
+  "_id": {
+    "$oid": "5fd258ea19e2073300722496"
+  },
+  "date": "2020-12-13",
+  "sleep_amount": 620
+},{
+  "_id": {
+    "$oid": "5fd258f719e2073300722497"
+  },
+  "date": "2020-11-30",
+  "sleep_amount": 480
+},{
+  "_id": {
+    "$oid": "5fd259a1ed8a180a0027f6a7"
+  },
+  "date": "2020-12-14",
+  "sleep_amount": 480
+},{
+  "_id": {
+    "$oid": "5fd261a5179c5633382b47bd"
+  },
+  "date": "2020-11-30",
+  "sleep_amount": 480
+},{
+  "_id": {
+    "$oid": "5fd6352c9b0c1e3bd48c6b15"
+  },
+  "date": "2020-12-13",
+  "sleep_amount": 480
+},{
+  "_id": {
+    "$oid": "5fd635549b0c1e3bd48c6b16"
+  },
+  "date": "2020-12-13",
+  "sleep_amount": 120
+},{
+  "_id": {
+    "$oid": "5fd65648169e1f1e43aa7f92"
+  },
+  "date": "2020-12-12",
+  "sleep_amount": 390
+}]

@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "5fd6a3b7169e1f1e43aa7f9b"
+  },
+  "tache": "envoyer les invitations"
+},{
+  "_id": {
+    "$oid": "5fd6a403169e1f1e43aa7f9f"
+  },
+  "tache": "acheter des vetement"
+},{
+  "_id": {
+    "$oid": "5fd6a411169e1f1e43aa7fa0"
+  },
+  "tache": "commencer ma valise"
+},{
+  "_id": {
+    "$oid": "5fd6ad1775582a4ce8ae5ab3"
+  },
+  "tache": "manger"
+},{
+  "_id": {
+    "$oid": "5fd72394dd8b4636b28f410a"
+  },
+  "tache": "faire le montage vidéo"
+},{
+  "_id": {
+    "$oid": "5fd723a7dd8b4636b28f410b"
+  },
+  "tache": "preparer la soutenance"
+}]
