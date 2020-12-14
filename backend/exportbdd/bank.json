@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "5fd73066c830b83cba6088ac"
+  },
+  "solde": null,
+  "debit": null,
+  "credit": null
+},{
+  "_id": {
+    "$oid": "5fd73079c830b83cba6088ad"
+  },
+  "solde": 1000,
+  "debit": 0,
+  "credit": 1000
+},{
+  "_id": {
+    "$oid": "5fd73095c830b83cba6088ae"
+  },
+  "solde": 900.1,
+  "debit": 99.9,
+  "credit": 1000
+}]
